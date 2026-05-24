@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>初中会考地理刷题系统</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="题目导航">
+        <div class="brand">
+          <div class="brand-mark">地</div>
+          <div>
+            <h1>会考地理刷题</h1>
+            <p id="bankTitle">题库加载中</p>
+          </div>
+        </div>
+
+        <div class="stats-grid" aria-label="练习统计">
+          <div class="stat">
+            <span>已练</span>
+            <strong id="attemptedCount">0</strong>
+          </div>
+          <div class="stat">
+            <span>正确率</span>
+            <strong id="accuracyRate">--</strong>
+          </div>
+          <div class="stat">
+            <span>错题</span>
+            <strong id="wrongCount">0</strong>
+          </div>
+          <div class="stat">
+            <span>总题</span>
+            <strong id="totalCount">0</strong>
+          </div>
+        </div>
+
+        <div class="filter-group" aria-label="筛选">
+          <button class="filter-button active" data-filter="all" type="button">全部</button>
+          <button class="filter-button" data-filter="choice" type="button">选择题</button>
+          <button class="filter-button" data-filter="non_choice" type="button">非选择题</button>
+          <button class="filter-button" data-filter="image" type="button">读图题</button>
+          <button class="filter-button" data-filter="wrong" type="button">错题</button>
+          <button class="filter-button" data-filter="unanswered" type="button">未练</button>
+        </div>
+
+        <label class="search-box">
+          <span>搜索</span>
+          <input id="searchInput" type="search" placeholder="题干、题号、材料" />
+        </label>
+
+        <div class="question-list" id="questionList" aria-label="题号列表"></div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" id="questionMeta">第 -- 题</p>
+            <h2 id="questionHeading">加载中</h2>
+          </div>
+          <div class="toolbar">
+            <button id="randomButton" class="icon-button" type="button" title="随机一题" aria-label="随机一题">⟳</button>
+            <button id="prevButton" class="text-button" type="button">上一题</button>
+            <button id="nextButton" class="text-button primary" type="button">下一题</button>
+          </div>
+        </header>
+
+        <section class="question-panel" aria-live="polite">
+          <div class="prompt-block" id="groupPrompt"></div>
+          <div class="media-grid" id="imageArea"></div>
+          <div class="stem" id="questionStem"></div>
+          <form id="answerForm" class="answer-area"></form>
+          <div class="result-panel hidden" id="resultPanel"></div>
+          <div class="actions">
+            <button id="submitButton" class="text-button primary" type="button">提交</button>
+            <button id="markCorrectButton" class="text-button success hidden" type="button">标记正确</button>
+            <button id="markWrongButton" class="text-button danger hidden" type="button">加入错题</button>
+            <button id="clearCurrentButton" class="text-button" type="button">清除本题</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="imageDialog" class="image-dialog">
+      <button id="closeImageDialog" class="dialog-close" type="button" aria-label="关闭">×</button>
+      <img id="dialogImage" alt="" />
+    </dialog>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,5 +1,6 @@
 node_modules
 .DS_Store
+quiz-preview.png
 
 # OCR/rendering cache and intermediate artifacts.
 geography_bank/tessdata/
