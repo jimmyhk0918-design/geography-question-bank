@@ -1,0 +1,615 @@
+import csv
+import json
+from pathlib import Path
+
+from PIL import Image, ImageOps
+
+
+ROOT = Path(__file__).resolve().parent
+PAGES = ROOT / "pages"
+IMG_DIR = ROOT / "question_images"
+OUT_JSON = ROOT / "haikou_2025_geography_mock1_question_bank.json"
+OUT_CSV = ROOT / "haikou_2025_geography_mock1_question_bank.csv"
+OUT_MD = ROOT / "haikou_2025_geography_mock1_question_bank.md"
+
+
+FIGURES = [
+    ("figure_01", 1, (1120, 840, 1595, 1385), "图1：中国濒临的海洋示意", [1, 2]),
+    ("figure_02", 1, (855, 1450, 1595, 1885), "图2：校园景观指示牌及校园局部图", [3, 4]),
+    ("figure_03", 1, (960, 1990, 1605, 2385), "图3：塔里木盆地示意图", [5, 6]),
+    ("table_01", 2, (190, 245, 1515, 525), "表1：某地月平均气温资料", [7, 8]),
+    ("figure_04", 2, (1050, 960, 1595, 1460), "图4：北极地区示意图", [9, 10]),
+    ("figure_05", 2, (195, 1620, 1590, 2085), "图5：甲、乙两国简图", [11, 12]),
+    ("figure_06", 3, (1065, 125, 1545, 470), "图6：漫画《洗澡》", [13, 14]),
+    ("figure_07", 3, (970, 500, 1600, 1040), "图7：我国某地等高线地形图", [15, 16]),
+    ("figure_08", 3, (1025, 1365, 1585, 1935), "图8：我国2010-2023年人口总量变化曲线与人口年龄构成比例变化图", [19, 20, 21]),
+    ("figure_09", 3, (745, 1905, 1590, 2325), "图9：我国四大卫星发射基地及二十四节气示意", [22, 23]),
+    ("figure_10", 4, (690, 170, 1585, 625), "图10：中国东北地区与美国黑土分布", [24, 25]),
+    ("figure_11", 4, (850, 790, 1520, 1240), "图11：中央红军长征路线示意图", [26, 27]),
+    ("figure_12", 4, (1130, 1340, 1585, 1745), "图12：陵水县海底数据中心位置示意图", [28, 29]),
+    ("figure_13", 4, (905, 1815, 1585, 2195), "图13：我国部分城市1月平均气温柱状图", [30, 31]),
+    ("figure_14", 5, (1160, 90, 1555, 555), "图14：沿某30°纬线图的地形剖面图", [34, 35]),
+    ("figure_15", 5, (560, 925, 1420, 1550), "图15：世界年平均气温分布图", [36]),
+    ("figure_16", 6, (795, 70, 1775, 815), "图16：长江三角洲区域示意图", [37]),
+    ("figure_17", 6, (90, 1280, 805, 1840), "图17：海南省示意图", [38]),
+    ("figure_18", 6, (795, 1285, 1585, 1840), "图18：粤港澳大湾区城市分布图", [38]),
+]
+
+
+def image_path(name: str) -> str:
+    return f"question_images/{name}.png"
+
+
+QUESTIONS = [
+    {
+        "id": "HK2025-M1-GEO-001",
+        "number": 1,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 1,
+        "group_prompt": "2025年4月23日是中国人民海军成立76周年纪念日。23日前后，人民海军将在沿海10多个城市港口同步举行舰艇开放活动。读图1，完成1-2题。",
+        "stem": "我国是一个海洋大国，具有的国情是",
+        "options": {"A": "领海面积960万平方千米", "B": "海洋资源总量大，人均多", "C": "岛屿众多，大陆架狭窄", "D": "污染较严重，灾害频发"},
+        "answer": "",
+        "images": [image_path("figure_01")],
+    },
+    {
+        "id": "HK2025-M1-GEO-002",
+        "number": 2,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 1,
+        "group_prompt": "2025年4月23日是中国人民海军成立76周年纪念日。23日前后，人民海军将在沿海10多个城市港口同步举行舰艇开放活动。读图1，完成1-2题。",
+        "stem": "中国人民海军加强对钓鱼岛的定期巡航，其意义是",
+        "options": {"A": "提高舰艇开放活动知名度", "B": "维护外交关系，睦邻友好", "C": "强化全民海洋意识，树立海洋国土观念", "D": "加强我国对南海岛礁及海域的有效管理"},
+        "answer": "",
+        "images": [image_path("figure_01")],
+    },
+    {
+        "id": "HK2025-M1-GEO-003",
+        "number": 3,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 1,
+        "group_prompt": "读某校校园景观指示牌（图2-a）及校园局部图（图2-b），完成3-4题。",
+        "stem": "若把图2-b看作一幅完整的地图，则图2-a相当于图2-b的",
+        "options": {"A": "图例和注记", "B": "方向", "C": "位置说明", "D": "比例尺"},
+        "answer": "",
+        "images": [image_path("figure_02")],
+    },
+    {
+        "id": "HK2025-M1-GEO-004",
+        "number": 4,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 1,
+        "group_prompt": "读某校校园景观指示牌（图2-a）及校园局部图（图2-b），完成3-4题。",
+        "stem": "根据图2-a信息判断，指示牌最可能位于图2-b中的",
+        "options": {"A": "①处", "B": "②处", "C": "③处", "D": "④处"},
+        "answer": "",
+        "images": [image_path("figure_02")],
+    },
+    {
+        "id": "HK2025-M1-GEO-005",
+        "number": 5,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 1,
+        "group_prompt": "2024年11月28日，塔克拉玛干沙漠边缘的绿色阻沙防护带全面锁边“合龙”，形成全长3046公里的生态绿环。读塔里木盆地示意图（图3），完成5-6题。",
+        "stem": "“锁边”工程难度大、施工时间长的原因是当地",
+        "options": {"A": "病虫害多", "B": "泥石流频发", "C": "气候冷湿", "D": "沙漠面积大"},
+        "answer": "",
+        "images": [image_path("figure_03")],
+    },
+    {
+        "id": "HK2025-M1-GEO-006",
+        "number": 6,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 1,
+        "group_prompt": "2024年11月28日，塔克拉玛干沙漠边缘的绿色阻沙防护带全面锁边“合龙”，形成全长3046公里的生态绿环。读塔里木盆地示意图（图3），完成5-6题。",
+        "stem": "生态绿环的建成，对当地的有利影响是",
+        "options": {"A": "减少草地面积", "B": "保障农业生产稳定性", "C": "减轻河流污染", "D": "提高居民的文化素养"},
+        "answer": "",
+        "images": [image_path("figure_03")],
+    },
+    {
+        "id": "HK2025-M1-GEO-007",
+        "number": 7,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 2,
+        "group_prompt": "读表1，完成7-8题。",
+        "stem": "将表中数据资料绘制气温曲线图，在图上标注图名，正确的步骤是：①用平滑的线连接各点，画出一条曲线；②将12个月的气温数据，在图中用点标注出来；③绘出横坐标轴，平分为12段，逐段标上月份；④绘出纵坐标轴，按相等的温度差标上气温刻度。",
+        "options": {"A": "①②③④", "B": "③②④①", "C": "①④②③", "D": "③④②①"},
+        "answer": "",
+        "images": [image_path("table_01")],
+    },
+    {
+        "id": "HK2025-M1-GEO-008",
+        "number": 8,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 2,
+        "group_prompt": "读表1，完成7-8题。",
+        "stem": "该地所在地区可能是",
+        "options": {"A": "北半球的热带", "B": "南半球的热带", "C": "北半球的陆地", "D": "南半球的海洋"},
+        "answer": "",
+        "images": [image_path("table_01")],
+    },
+    {
+        "id": "HK2025-M1-GEO-009",
+        "number": 9,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 2,
+        "group_prompt": "2025年3月22日世界水日的主题是“冰川保护”。据观测，2025年北极边缘海冰覆盖率仅15%（正常应超50%）。读北极地区示意图（图4），完成9-10题。",
+        "stem": "北极海冰持续退减，其主要原因是",
+        "options": {"A": "二氧化碳排放量大，全球变暖", "B": "人类开采海冰，输往干旱地区", "C": "北极降水减少，太阳辐射增强", "D": "科考活动频繁，环境破坏严重"},
+        "answer": "",
+        "images": [image_path("figure_04")],
+    },
+    {
+        "id": "HK2025-M1-GEO-010",
+        "number": 10,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 2,
+        "group_prompt": "2025年3月22日世界水日的主题是“冰川保护”。据观测，2025年北极边缘海冰覆盖率仅15%（正常应超50%）。读北极地区示意图（图4），完成9-10题。",
+        "stem": "北极海冰持续退减，对北极地区可能带来的影响有",
+        "options": {"A": "北极熊捕猎的成功率上升", "B": "北极圈内苔原带面积扩大", "C": "浮冰量增多，通航能力下降", "D": "封冻期增长，利于渔业捕捞"},
+        "answer": "",
+        "images": [image_path("figure_04")],
+    },
+    {
+        "id": "HK2025-M1-GEO-011",
+        "number": 11,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 2,
+        "group_prompt": "读甲、乙两国简图（图5），完成11-12题。",
+        "stem": "关于两国工业区的分布，叙述正确的是",
+        "options": {"A": "甲国：多接近矿产资源产地", "B": "乙国：主要分布在丘陵地区", "C": "甲国：主要分布在亚洲部分", "D": "乙国：多分布在大西洋沿岸"},
+        "answer": "",
+        "images": [image_path("figure_05")],
+    },
+    {
+        "id": "HK2025-M1-GEO-012",
+        "number": 12,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 2,
+        "group_prompt": "读甲、乙两国简图（图5），完成11-12题。",
+        "stem": "关于两国的叙述，正确的是",
+        "options": {"A": "甲国：地狭人稠", "B": "甲国：以温带大陆性气候为主", "C": "乙国：地广人稀", "D": "乙国：以温带海洋性气候为主"},
+        "answer": "",
+        "images": [image_path("figure_05")],
+    },
+    {
+        "id": "HK2025-M1-GEO-013",
+        "number": 13,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 3,
+        "group_prompt": "读漫画《洗澡》（图6），完成13-14题。",
+        "stem": "漫画的主题是",
+        "options": {"A": "纯净水减产", "B": "地球气温升高", "C": "水资源紧缺", "D": "水体污染严重"},
+        "answer": "",
+        "images": [image_path("figure_06")],
+    },
+    {
+        "id": "HK2025-M1-GEO-014",
+        "number": 14,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 3,
+        "group_prompt": "读漫画《洗澡》（图6），完成13-14题。",
+        "stem": "可能加剧漫画所反映环境问题的行为是",
+        "options": {"A": "改进灌溉方式", "B": "使用化肥、农药", "C": "废水达标排放", "D": "生产环保清洁剂"},
+        "answer": "",
+        "images": [image_path("figure_06")],
+    },
+    {
+        "id": "HK2025-M1-GEO-015",
+        "number": 15,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 3,
+        "group_prompt": "“坪”是指四周被河流切割、顶部平缓的地形。读我国某地等高线地形图（图7），完成15-16题。",
+        "stem": "当地村落多采用“坪”作为地名，下列村落所在地中，属于“坪”的是",
+        "options": {"A": "①村", "B": "②村", "C": "③村", "D": "④村"},
+        "answer": "",
+        "images": [image_path("figure_07")],
+    },
+    {
+        "id": "HK2025-M1-GEO-016",
+        "number": 16,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 3,
+        "group_prompt": "“坪”是指四周被河流切割、顶部平缓的地形。读我国某地等高线地形图（图7），完成15-16题。",
+        "stem": "近年，②、③两村修建村道，选择绕行而未修建隧道、桥梁，考虑的主要因素是",
+        "options": {"A": "气候因素", "B": "技术因素", "C": "地形因素", "D": "经济因素"},
+        "answer": "",
+        "images": [image_path("figure_07")],
+    },
+    {
+        "id": "HK2025-M1-GEO-017",
+        "number": 17,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 3,
+        "group_prompt": "中国高铁营运里程居世界第一，2024年，近八成旅客乘坐动车出行。据此，完成17-18题。",
+        "stem": "高铁客运相比普通火车客运的优势体现在：①适合短距离运输；②总体载客量更大；③运输效率更高；④价格相对低廉。",
+        "options": {"A": "①③", "B": "②④", "C": "②③", "D": "①④"},
+        "answer": "",
+        "images": [],
+    },
+    {
+        "id": "HK2025-M1-GEO-018",
+        "number": 18,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 3,
+        "group_prompt": "中国高铁营运里程居世界第一，2024年，近八成旅客乘坐动车出行。据此，完成17-18题。",
+        "stem": "我国东部地区高铁客运的班次非常密集，是因为东部地区",
+        "options": {"A": "经济发达，对交通运输需求量大", "B": "洪灾频发，经常抢运救灾物资", "C": "地势起伏大，高铁施工难度较小", "D": "人口、城市稀疏，互相联系困难"},
+        "answer": "",
+        "images": [],
+    },
+    {
+        "id": "HK2025-M1-GEO-019",
+        "number": 19,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 3,
+        "group_prompt": "有研究表明，我国现今的人口老龄化对我国制造业实现自动化具有推动作用。读我国2010-2023年人口总量变化曲线与人口年龄构成比例变化图（图8），完成19-21题。",
+        "stem": "我国15-64岁人口数量",
+        "options": {"A": "先增后减", "B": "先减后增", "C": "持续增加", "D": "持续减少"},
+        "answer": "",
+        "images": [image_path("figure_08")],
+    },
+    {
+        "id": "HK2025-M1-GEO-020",
+        "number": 20,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 3,
+        "group_prompt": "有研究表明，我国现今的人口老龄化对我国制造业实现自动化具有推动作用。读我国2010-2023年人口总量变化曲线与人口年龄构成比例变化图（图8），完成19-21题。",
+        "stem": "我国人口老龄化对制造业实现自动化具有推动作用，主要是因为",
+        "options": {"A": "受教育年限延长", "B": "人均收入提高", "C": "劳动力数量短缺", "D": "技术创新加快"},
+        "answer": "",
+        "images": [image_path("figure_08")],
+    },
+    {
+        "id": "HK2025-M1-GEO-021",
+        "number": 21,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 3,
+        "group_prompt": "有研究表明，我国现今的人口老龄化对我国制造业实现自动化具有推动作用。读我国2010-2023年人口总量变化曲线与人口年龄构成比例变化图（图8），完成19-21题。",
+        "stem": "推动我国制造业自动化，需要",
+        "options": {"A": "加大教育投入力度", "B": "实施延迟退休制度", "C": "完善生育支持政策", "D": "劳动力跨区域流动"},
+        "answer": "",
+        "images": [image_path("figure_08")],
+    },
+    {
+        "id": "HK2025-M1-GEO-022",
+        "number": 22,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 3,
+        "group_prompt": "2025年4月24日，第十个中国航天日，神舟二十号载人飞船在酒泉卫星发射中心成功升空。读图9，完成22-23题。",
+        "stem": "最接近这一天的节气是",
+        "options": {"A": "春分日", "B": "惊蛰", "C": "夏至日", "D": "谷雨"},
+        "answer": "",
+        "images": [image_path("figure_09")],
+    },
+    {
+        "id": "HK2025-M1-GEO-023",
+        "number": 23,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 4,
+        "group_prompt": "2025年4月24日，第十个中国航天日，神舟二十号载人飞船在酒泉卫星发射中心成功升空。读图9，完成22-23题。",
+        "stem": "这一天，我国四大卫星发射基地，白昼时间最长的是",
+        "options": {"A": "文昌", "B": "西昌", "C": "太原", "D": "酒泉"},
+        "answer": "",
+        "images": [image_path("figure_09")],
+    },
+    {
+        "id": "HK2025-M1-GEO-024",
+        "number": 24,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 4,
+        "group_prompt": "读图10，完成24-25题。",
+        "stem": "图示地区的黑土分布于",
+        "options": {"A": "高纬度", "B": "东半球", "C": "北温带", "D": "沿海地区"},
+        "answer": "",
+        "images": [image_path("figure_10")],
+    },
+    {
+        "id": "HK2025-M1-GEO-025",
+        "number": 25,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 4,
+        "group_prompt": "读图10，完成24-25题。",
+        "stem": "两地的黑土分布区，我国是著名的水稻产区，美国则以种植玉米和小麦为主，原因是",
+        "options": {"A": "地形差异", "B": "气候差异", "C": "技术差异", "D": "市场差异"},
+        "answer": "",
+        "images": [image_path("figure_10")],
+    },
+    {
+        "id": "HK2025-M1-GEO-026",
+        "number": 26,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 4,
+        "group_prompt": "2025年是中国人民抗日战争取得胜利80周年。读中央红军长征路线示意图（图11），完成26-27题。",
+        "stem": "当年，到达吴起镇革命根据地，红军战士住进当地的传统民居",
+        "options": {"A": "四合院", "B": "窑洞", "C": "吊脚楼", "D": "毡房"},
+        "answer": "",
+        "images": [image_path("figure_11")],
+    },
+    {
+        "id": "HK2025-M1-GEO-027",
+        "number": 27,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 4,
+        "group_prompt": "2025年是中国人民抗日战争取得胜利80周年。读中央红军长征路线示意图（图11），完成26-27题。",
+        "stem": "今天，再走长征路，沿途所见景观有",
+        "options": {"A": "高铁巨龙穿越秦岭", "B": "四川盆地香蕉满园", "C": "大渡河天堑变通途", "D": "云贵高原沙丘连绵"},
+        "answer": "",
+        "images": [image_path("figure_11")],
+    },
+    {
+        "id": "HK2025-M1-GEO-028",
+        "number": 28,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 4,
+        "group_prompt": "“陆数海算”是指陆地上的数据到海底运算。设备进行数据运算时需要消耗电能，并需要散热。图示意陵水县海底数据中心的位置（图12）。据此，完成28-29题。",
+        "stem": "海底数据中心利用了海洋的",
+        "options": {"A": "生物资源", "B": "化学资源", "C": "空间资源", "D": "矿产资源"},
+        "answer": "",
+        "images": [image_path("figure_12")],
+    },
+    {
+        "id": "HK2025-M1-GEO-029",
+        "number": 29,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 4,
+        "group_prompt": "“陆数海算”是指陆地上的数据到海底运算。设备进行数据运算时需要消耗电能，并需要散热。图示意陵水县海底数据中心的位置（图12）。据此，完成28-29题。",
+        "stem": "该数据中心以海水作为冷源主要是为了",
+        "options": {"A": "减少能源消耗", "B": "降低维护难度", "C": "节约土地资源", "D": "延长使用寿命"},
+        "answer": "",
+        "images": [image_path("figure_12")],
+    },
+    {
+        "id": "HK2025-M1-GEO-030",
+        "number": 30,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 4,
+        "group_prompt": "读我国部分城市1月平均气温柱状图（图13），完成30-31题。",
+        "stem": "下列城市中，最靠近秦岭—淮河一线的是",
+        "options": {"A": "郑州", "B": "石家庄", "C": "济南", "D": "呼和浩特"},
+        "answer": "",
+        "images": [image_path("figure_13")],
+    },
+    {
+        "id": "HK2025-M1-GEO-031",
+        "number": 31,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 4,
+        "group_prompt": "读我国部分城市1月平均气温柱状图（图13），完成30-31题。",
+        "stem": "与其他城市比较，哈尔滨市1月气温偏低，主要原因是：①地势高；②距海远；③纬度高；④距冬季风源地近。",
+        "options": {"A": "①②", "B": "③④", "C": "①③", "D": "②④"},
+        "answer": "",
+        "images": [image_path("figure_13")],
+    },
+    {
+        "id": "HK2025-M1-GEO-032",
+        "number": 32,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 4,
+        "group_prompt": "读古诗，学地理。完成32-33题。",
+        "stem": "《长歌行》中有“百川东到海，何时复西归”。诗句中所指河流的流向最可能是",
+        "options": {"A": "自西向东", "B": "自东向西", "C": "自南向北", "D": "自北向南"},
+        "answer": "",
+        "images": [],
+    },
+    {
+        "id": "HK2025-M1-GEO-033",
+        "number": 33,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 5,
+        "group_prompt": "读古诗，学地理。完成32-33题。",
+        "stem": "“九曲黄河万里沙，浪淘风簸自天涯。”反映出黄河中游河段突出的水文特征是",
+        "options": {"A": "结冰期长", "B": "瀑布壮观", "C": "含沙量大", "D": "河面开阔"},
+        "answer": "",
+        "images": [],
+    },
+    {
+        "id": "HK2025-M1-GEO-034",
+        "number": 34,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 5,
+        "group_prompt": "读沿某30°纬线图的地形剖面图（图14），完成34-35题。",
+        "stem": "图中",
+        "options": {"A": "a大洋是世界上最冷的大洋", "B": "b大洋是世界上最大的大洋", "C": "b大洋是世界上最小的大洋", "D": "c大洋是世界上最热的大洋"},
+        "answer": "",
+        "images": [image_path("figure_14")],
+    },
+    {
+        "id": "HK2025-M1-GEO-035",
+        "number": 35,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 5,
+        "group_prompt": "读沿某30°纬线图的地形剖面图（图14），完成34-35题。",
+        "stem": "甲大陆",
+        "options": {"A": "高大山系分布在西海岸", "B": "地形以平原为主", "C": "高大山系分布在西南部", "D": "地形以高原为主"},
+        "answer": "",
+        "images": [image_path("figure_14")],
+    },
+    {
+        "id": "HK2025-M1-GEO-036",
+        "number": 36,
+        "type": "non_choice",
+        "score": 10,
+        "source_page": 5,
+        "group_prompt": "读图文资料，完成下列问题。",
+        "stem": "由中国和秘鲁共建的“一带一路”重点项目钱凯港是天然深水良港，于2024年11月14日开港，目前已开通“上海↔钱凯港”集装箱直航航线。结合世界年平均气温分布图（图15），完成下列问题。\n（1）世界年平均气温具有从低纬度向两极逐渐____的分布规律，钱凯港附近的20℃等温线向低纬弯曲，主要影响因素是____；“开港”时钱凯港当地为____季（节）。\n（2）中国是秘鲁的重要贸易伙伴，中秘两国之间的互助合作称为“____”；中国参与钱凯港建设的优势条件是____。（2分）\n（3）钱凯港的开通，南美洲出口至亚洲市场的货物，运输时间大大缩短，原因是____。（2分）从国家安全的角度，分析钱凯港开通对我国的影响是____。（2分）",
+        "options": {},
+        "answer": "",
+        "images": [image_path("figure_15")],
+    },
+    {
+        "id": "HK2025-M1-GEO-037",
+        "number": 37,
+        "type": "non_choice",
+        "score": 10,
+        "source_page": 6,
+        "group_prompt": "读图文资料，完成下列问题。",
+        "stem": "材料一：2025年初，宇树科技的机器人央视春晚扭秧歌，深度求索以不怕虎的锐气撼动美国人工智能巨头产生连锁效应。杭州是国家新一代智能创新发展试验区，政府对通用人工智能、人形机器人等未来产业加大资金支持，科技企业研发人员占比高，研发投入占研发经费超过七成。\n材料二：长江三角洲区域示意图（图16）。\n（1）长江三角洲，从纬度位置上看，位于____；农耕历史悠久，是举世闻名的“鱼米之乡”，其原因是____。（2分）\n（2）杭州高新技术产业发展迅猛，其有利条件是____。（2分）近些年，高新技术产业在生活中得到广泛应用，便捷了我们的生活。请列举一例你身边的人工智能产品，简述该产品对你的影响。你身边的人工智能产品：____；该产品对你的影响：____。\n（3）长江三角洲地区的核心城市是____；举例说明该城市对长江三角洲区域经济发展的带动作用：____。（2分）",
+        "options": {},
+        "answer": "",
+        "images": [image_path("figure_16")],
+    },
+    {
+        "id": "HK2025-M1-GEO-038",
+        "number": 38,
+        "type": "non_choice",
+        "score": 10,
+        "source_page": 6,
+        "group_prompt": "读图文资料，完成下列问题。",
+        "stem": "材料一：粤港澳大湾区是我国开放程度最高、经济活力最强的区域之一，已形成通信电子信息产业、新能源汽车产业、无人机产业、机器人等高新技术产业产业集群。2025年底前封关运作是海南自贸港建设的关键性阶段目标，海南省将加强同粤港澳大湾区联动发展，加力培育未来产业集群。\n材料二：海南省示意图（图17）、粤港澳大湾区城市分布图（图18）。\n（1）图示两地都濒临____海，在我国四大地理区域的划分中，属于南方地区，其判断依据是：两地都位于秦岭以南，____高原以东地区，气候具有____等相似特征。\n（2）粤港澳大湾区包括____省中南部地区的9个城市及香港、澳门两个特别行政区，其城市分布的特点是____；总体来看，海南省的人口主要分布在海南岛的北部及沿海地带，其主要原因是____。\n（3）相较于香港、澳门自由贸易港，海南省自由贸易港建设的优势是____。（2分）加强同粤港澳大湾区联动发展，对海南自贸港建设实现封关运作关键性阶段目标意义重大，其体现在____。（2分）",
+        "options": {},
+        "answer": "",
+        "images": [image_path("figure_17"), image_path("figure_18")],
+    },
+]
+
+
+def crop_figures() -> None:
+    IMG_DIR.mkdir(parents=True, exist_ok=True)
+    for name, page, box, _, _ in FIGURES:
+        source = Image.open(PAGES / f"page-{page:02d}.png").convert("RGB")
+        crop = source.crop(box)
+        crop = ImageOps.autocontrast(crop, cutoff=1)
+        crop.save(IMG_DIR / f"{name}.png", optimize=True)
+
+
+def write_json() -> None:
+    payload = {
+        "source": {
+            "title": "海口市2025年初中学业水平考试地理模拟试题（一）",
+            "subject": "地理",
+            "exam_time_minutes": 60,
+            "full_score": 100,
+            "original_pdf": "海口市2025年初中学业水平考试地理模拟试题一.pdf",
+            "notes": "本题库由扫描试卷OCR与人工校对生成；原PDF未包含答案页，answer字段暂为空。",
+        },
+        "figures": [
+            {
+                "id": name,
+                "title": title,
+                "source_page": page,
+                "file": image_path(name),
+                "linked_question_numbers": linked,
+            }
+            for name, page, _, title, linked in FIGURES
+        ],
+        "questions": QUESTIONS,
+    }
+    OUT_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def write_csv() -> None:
+    with OUT_CSV.open("w", newline="", encoding="utf-8-sig") as file:
+        writer = csv.DictWriter(
+            file,
+            fieldnames=[
+                "id",
+                "number",
+                "type",
+                "score",
+                "source_page",
+                "group_prompt",
+                "stem",
+                "option_a",
+                "option_b",
+                "option_c",
+                "option_d",
+                "answer",
+                "images",
+            ],
+        )
+        writer.writeheader()
+        for q in QUESTIONS:
+            options = q.get("options", {})
+            writer.writerow(
+                {
+                    "id": q["id"],
+                    "number": q["number"],
+                    "type": q["type"],
+                    "score": q["score"],
+                    "source_page": q["source_page"],
+                    "group_prompt": q["group_prompt"],
+                    "stem": q["stem"],
+                    "option_a": options.get("A", ""),
+                    "option_b": options.get("B", ""),
+                    "option_c": options.get("C", ""),
+                    "option_d": options.get("D", ""),
+                    "answer": q.get("answer", ""),
+                    "images": ";".join(q.get("images", [])),
+                }
+            )
+
+
+def write_markdown() -> None:
+    lines = [
+        "# 海口市2025年初中学业水平考试地理模拟试题（一）题库",
+        "",
+        "> 注：原PDF未包含答案页，`answer` 字段暂为空；图片路径相对于本目录。",
+        "",
+    ]
+    for q in QUESTIONS:
+        lines.append(f"## {q['number']}. {q['stem']}")
+        if q.get("group_prompt"):
+            lines.append("")
+            lines.append(f"材料/题组：{q['group_prompt']}")
+        if q.get("options"):
+            lines.append("")
+            for key in ["A", "B", "C", "D"]:
+                if key in q["options"]:
+                    lines.append(f"- {key}. {q['options'][key]}")
+        if q.get("images"):
+            lines.append("")
+            lines.append("关联图片：" + "，".join(q["images"]))
+        lines.append("")
+    OUT_MD.write_text("\n".join(lines), encoding="utf-8")
+
+
+def main() -> None:
+    crop_figures()
+    write_json()
+    write_csv()
+    write_markdown()
+    print(f"wrote {OUT_JSON}")
+    print(f"wrote {OUT_CSV}")
+    print(f"wrote {OUT_MD}")
+    print(f"cropped {len(FIGURES)} figures to {IMG_DIR}")
+
+
+if __name__ == "__main__":
+    main()
