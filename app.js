@@ -248,6 +248,15 @@ function renderResult(question) {
 
   if (hasAnswer(question)) {
     const correctAnswer = String(question.answer).trim();
+
+    if (!isChoice(question) && record.isCorrect === null) {
+      els.resultPanel.classList.add("pending");
+      els.resultPanel.textContent = `${answerSummary(question, record)}。参考答案：${correctAnswer}`;
+      els.markCorrectButton.classList.remove("hidden");
+      els.markWrongButton.classList.remove("hidden");
+      return;
+    }
+
     const isCorrect = record.isCorrect === true;
     els.resultPanel.classList.add(isCorrect ? "correct" : "wrong");
     els.resultPanel.textContent = `${answerSummary(question, record)}。参考答案：${correctAnswer}`;
