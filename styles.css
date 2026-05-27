@@ -147,7 +147,15 @@ button {
   font-size: 13px;
 }
 
-.search-box input {
+.bank-picker {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.search-box input,
+.bank-picker select {
   width: 100%;
   min-height: 42px;
   padding: 0 12px;

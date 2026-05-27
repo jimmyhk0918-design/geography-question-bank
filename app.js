@@ -1,17 +1,26 @@
-const DATA_URL = "./geography_bank/haikou_2025_geography_mock1_question_bank.json";
-const STORAGE_KEY = "geo-question-bank-progress-v1";
+const BANK_INDEX_URL = "./geography_bank/question_banks.json";
+const SELECTED_BANK_KEY = "geo-question-bank-selected-bank-v1";
+const FALLBACK_BANK = {
+  id: "haikou_2025_mock1",
+  title: "海口市2025年初中学业水平考试地理模拟试题（一）",
+  url: "./geography_bank/haikou_2025_geography_mock1_question_bank.json",
+  basePath: "./geography_bank",
+};
 
 const state = {
   source: null,
+  banks: [],
+  currentBank: null,
   questions: [],
   currentIndex: 0,
   filter: "all",
   search: "",
-  progress: loadProgress(),
+  progress: {},
 };
 
 const els = {
   bankTitle: document.querySelector("#bankTitle"),
+  bankSelect: document.querySelector("#bankSelect"),
   attemptedCount: document.querySelector("#attemptedCount"),
   accuracyRate: document.querySelector("#accuracyRate"),
   wrongCount: document.querySelector("#wrongCount"),
@@ -37,16 +46,20 @@ const els = {
   closeImageDialog: document.querySelector("#closeImageDialog"),
 };
 
-function loadProgress() {
+function progressKey(bankId) {
+  return `geo-question-bank-progress-v1:${bankId || "default"}`;
+}
+
+function loadProgress(bankId) {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+    return JSON.parse(localStorage.getItem(progressKey(bankId))) || {};
   } catch {
     return {};
   }
 }
 
 function saveProgress() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state.progress));
+  localStorage.setItem(progressKey(state.currentBank?.id), JSON.stringify(state.progress));
 }
 
 function getRecord(questionId) {
@@ -164,7 +177,7 @@ function renderImages(question) {
     button.title = "查看大图";
 
     const img = document.createElement("img");
-    img.src = `./geography_bank/${imagePath}`;
+    img.src = `${state.currentBank?.basePath || "./geography_bank"}/${imagePath}`;
     img.alt = `第${question.number}题关联图${index + 1}`;
     button.append(img);
 
@@ -285,7 +298,18 @@ function renderResult(question) {
 
 function renderQuestion() {
   const question = currentQuestion();
-  if (!question) return;
+  if (!question) {
+    els.questionMeta.textContent = "暂无题目";
+    els.questionHeading.textContent = "没有匹配题目";
+    els.groupPrompt.textContent = "";
+    els.imageArea.innerHTML = "";
+    els.questionStem.textContent = "请调整筛选或搜索条件。";
+    els.answerForm.innerHTML = "";
+    els.resultPanel.className = "result-panel hidden";
+    els.prevButton.disabled = true;
+    els.nextButton.disabled = true;
+    return;
+  }
 
   const record = getRecord(question.id);
   els.questionMeta.textContent = `第 ${question.number} 题 · ${question.score} 分 · 第 ${question.source_page} 页`;
@@ -305,6 +329,17 @@ function render() {
   updateStats();
   renderQuestionList();
   renderQuestion();
+}
+
+function renderBankSelect() {
+  els.bankSelect.innerHTML = "";
+  state.banks.forEach((bank) => {
+    const option = document.createElement("option");
+    option.value = bank.id;
+    option.textContent = bank.title;
+    option.selected = bank.id === state.currentBank?.id;
+    els.bankSelect.append(option);
+  });
 }
 
 function submitCurrent() {
@@ -363,6 +398,10 @@ function randomQuestion() {
 }
 
 function bindEvents() {
+  els.bankSelect.addEventListener("change", async (event) => {
+    await loadBank(event.target.value);
+  });
+
   document.querySelectorAll(".filter-button").forEach((button) => {
     button.addEventListener("click", () => {
       document.querySelectorAll(".filter-button").forEach((item) => item.classList.remove("active"));
@@ -391,16 +430,38 @@ function bindEvents() {
   els.closeImageDialog.addEventListener("click", () => els.imageDialog.close());
 }
 
+async function loadBank(bankId) {
+  const nextBank = state.banks.find((bank) => bank.id === bankId) || state.banks[0] || FALLBACK_BANK;
+  state.currentBank = nextBank;
+  state.source = null;
+  state.questions = [];
+  state.currentIndex = 0;
+  state.progress = loadProgress(nextBank.id);
+  localStorage.setItem(SELECTED_BANK_KEY, nextBank.id);
+  renderBankSelect();
+
+  els.bankTitle.textContent = "题库加载中";
+  els.questionHeading.textContent = "加载中";
+  els.questionStem.textContent = "";
+  els.submitButton.disabled = true;
+
+  const response = await fetch(nextBank.url);
+  if (!response.ok) throw new Error(`题库加载失败：${response.status}`);
+  const data = await response.json();
+  state.source = data.source;
+  state.questions = data.questions || [];
+  els.bankTitle.textContent = data.source?.title || nextBank.title || "地理题库";
+  els.submitButton.disabled = false;
+  render();
+}
+
 async function init() {
   bindEvents();
   try {
-    const response = await fetch(DATA_URL);
-    if (!response.ok) throw new Error(`题库加载失败：${response.status}`);
-    const data = await response.json();
-    state.source = data.source;
-    state.questions = data.questions || [];
-    els.bankTitle.textContent = data.source?.title || "地理题库";
-    render();
+    const bankResponse = await fetch(BANK_INDEX_URL);
+    state.banks = bankResponse.ok ? await bankResponse.json() : [FALLBACK_BANK];
+    const savedBankId = localStorage.getItem(SELECTED_BANK_KEY);
+    await loadBank(savedBankId || state.banks[0]?.id || FALLBACK_BANK.id);
   } catch (error) {
     els.bankTitle.textContent = "题库加载失败";
     els.questionHeading.textContent = "无法读取题库";

@@ -6,8 +6,13 @@ quiz-preview.png
 geography_bank/tessdata/
 geography_bank/ocr/
 geography_bank/pages/
+geography_bank/**/ocr/
+geography_bank/**/pages/
 
 # Local helper scripts with machine-specific paths.
 geography_bank/render_pdf.mjs
 geography_bank/ocr_pages.mjs
 geography_bank/extract_text_layer.mjs
+geography_bank/**/render_pdf.mjs
+geography_bank/**/extract_text_layer.mjs
+geography_bank/**/question_images_contact_sheet.jpg

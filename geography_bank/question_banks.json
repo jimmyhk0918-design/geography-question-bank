@@ -1,0 +1,14 @@
+[
+  {
+    "id": "haikou_2025_mock1",
+    "title": "海口市2025年初中学业水平考试地理模拟试题（一）",
+    "url": "./geography_bank/haikou_2025_geography_mock1_question_bank.json",
+    "basePath": "./geography_bank"
+  },
+  {
+    "id": "hainan_2024_exam",
+    "title": "2024年海南省中考地理真题",
+    "url": "./geography_bank/hainan_2024_exam/hainan_2024_geography_exam_question_bank.json",
+    "basePath": "./geography_bank/hainan_2024_exam"
+  }
+]
