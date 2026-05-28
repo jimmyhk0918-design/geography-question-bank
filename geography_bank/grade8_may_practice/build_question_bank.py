@@ -1,0 +1,736 @@
+import csv
+import json
+from pathlib import Path
+
+from PIL import Image, ImageOps
+
+
+ROOT = Path(__file__).resolve().parent
+PAGES = ROOT / "pages"
+IMG_DIR = ROOT / "question_images"
+OUT_JSON = ROOT / "grade8_may_practice_question_bank.json"
+OUT_CSV = ROOT / "grade8_may_practice_question_bank.csv"
+OUT_MD = ROOT / "grade8_may_practice_question_bank.md"
+
+
+FIGURES = [
+    ("figure_01", 1, (910, 405, 1605, 675), "手机数字地图示意图", [1]),
+    ("figure_02", 1, (1010, 695, 1605, 1125), "南极地区图", [2, 3]),
+    ("figure_03", 1, (300, 1180, 1570, 1415), "四地位置图", [4]),
+    ("figure_04", 1, (1120, 1510, 1625, 2035), "砚瓦山等高线示意图", [5, 6]),
+    ("figure_05", 2, (120, 120, 1510, 410), "人口增长与世界人口分布图", [7, 8]),
+    ("figure_06", 2, (225, 850, 1405, 1375), "希腊萨索斯岛古镇与新镇分布示意图及传统建筑景观图", [9, 10]),
+    ("figure_07", 2, (995, 1670, 1495, 2055), "Beidane帐篷景观图", [11, 12]),
+    ("figure_08", 3, (990, 485, 1520, 910), "某地气温和降水量统计图", [13, 14]),
+    ("figure_09", 3, (480, 1195, 1395, 1670), "黄河古贤水利枢纽位置示意图", [15, 16]),
+    ("figure_10", 4, (450, 125, 1310, 520), "新疆油气井工程与西气东输线路示意图", [17, 18]),
+    ("figure_11", 4, (820, 825, 1515, 1290), "中国主要山脉分布图", [19, 20]),
+    ("figure_12", 4, (450, 1510, 1165, 1845), "三个省级行政区土地利用结构图", [21, 22]),
+    ("figure_13", 5, (995, 450, 1375, 880), "K半岛概况图", [23, 24]),
+    ("figure_14", 5, (1120, 930, 1535, 1450), "海洋碳汇渔业流程图", [25, 26]),
+    ("figure_15", 6, (1030, 205, 1545, 690), "黄花滩生态移民区农业模式示意图", [29, 30, 31]),
+    ("figure_16", 6, (1015, 805, 1555, 1215), "不同纬度一年中昼长变化折线图", [32, 33]),
+    ("figure_17", 6, (515, 1270, 1190, 1620), "某铁路干线沿线气候资料图", [34, 35]),
+    ("figure_18", 7, (225, 300, 1475, 735), "几内亚位置、凯乐塔水电站和孔库雷河气候资料图", [36]),
+    ("figure_19", 7, (230, 1605, 1455, 2035), "河北南茶北种主要茶园分布和我国茶叶四大产区分布图", [37]),
+    ("figure_20", 8, (320, 900, 1375, 1265), "海南省地理位置和地形图", [38]),
+]
+
+
+def image_path(name: str) -> str:
+    return f"question_images/{name}.png"
+
+
+QUESTIONS = [
+    {
+        "id": "G8MAY-GEO-001",
+        "number": 1,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 1,
+        "group_prompt": "甲、乙两图均为手机数字地图，我们用手指操作时，可以查询到需要的信息。读图，完成第1题。",
+        "stem": "下列关于甲乙两图的说法，正确的是",
+        "options": {
+            "A": "我们点击甲图中的“+”号，可以看到乙图",
+            "B": "甲乙两图相比较，甲图表示的范围较大",
+            "C": "甲乙两图中，表示内容更详细的是乙图",
+            "D": "图中道路朝西北—东南方向延伸",
+        },
+        "answer": "",
+        "images": [image_path("figure_01")],
+    },
+    {
+        "id": "G8MAY-GEO-002",
+        "number": 2,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 1,
+        "group_prompt": "罗斯海是南太平洋深入南极洲的大海湾，是地球上船舶所能到达的最南部海域之一。2022年中国第五个南极科学考察站——秦岭站在南极恩克斯堡岛正式建成。读“南极地区图”，完成第2-4小题。",
+        "stem": "我国五个南极科学考察站中，无极昼极夜现象的是",
+        "options": {"A": "昆仑站", "B": "中山站", "C": "泰山站", "D": "长城站"},
+        "answer": "",
+        "images": [image_path("figure_02")],
+    },
+    {
+        "id": "G8MAY-GEO-003",
+        "number": 3,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 1,
+        "group_prompt": "罗斯海是南太平洋深入南极洲的大海湾，是地球上船舶所能到达的最南部海域之一。2022年中国第五个南极科学考察站——秦岭站在南极恩克斯堡岛正式建成。读“南极地区图”，完成第2-4小题。",
+        "stem": "长城站位于昆仑站的",
+        "options": {"A": "西南方向", "B": "西北方向", "C": "东北方向", "D": "东南方向"},
+        "answer": "",
+        "images": [image_path("figure_02")],
+    },
+    {
+        "id": "G8MAY-GEO-004",
+        "number": 4,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 1,
+        "group_prompt": "读四地位置图，完成第4题。",
+        "stem": "图中符合“北半球、中纬度、东半球”的地点是",
+        "options": {"A": "甲", "B": "乙", "C": "丙", "D": "丁"},
+        "answer": "",
+        "images": [image_path("figure_03")],
+    },
+    {
+        "id": "G8MAY-GEO-005",
+        "number": 5,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 1,
+        "group_prompt": "“探石爱好者联盟”队员赴苏州西郊砚瓦山开展研学活动。图为砚瓦山等高线示意图，完成第5-6小题。",
+        "stem": "同学们在甲处采集到了贝壳化石，说明此处曾经有",
+        "options": {
+            "A": "火山喷发和地壳活动",
+            "B": "大规模的海陆变迁",
+            "C": "气候变化和冰川消融",
+            "D": "较强烈的人类活动",
+        },
+        "answer": "",
+        "images": [image_path("figure_04")],
+    },
+    {
+        "id": "G8MAY-GEO-006",
+        "number": 6,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 1,
+        "group_prompt": "“探石爱好者联盟”队员赴苏州西郊砚瓦山开展研学活动。图为砚瓦山等高线示意图，完成第5-6小题。",
+        "stem": "关于考察沿途的描述，正确的是",
+        "options": {
+            "A": "垂钓基地位于山谷附近",
+            "B": "丙位于地势平坦的鞍部",
+            "C": "甲、乙的高差约为40米",
+            "D": "丁处为聚落集中分布区",
+        },
+        "answer": "",
+        "images": [image_path("figure_04")],
+    },
+    {
+        "id": "G8MAY-GEO-007",
+        "number": 7,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 2,
+        "group_prompt": "一个国家人口增长状况取决于人口出生率和人口死亡率之差。图1中abcd表示四个国家的人口出生率和人口死亡率，图2示意人口自然增长率变化图，图3示意世界人口分布和全球人口数量。读下图，完成第7-8小题。",
+        "stem": "关于图2人口自然增长率，描述正确的是",
+        "options": {
+            "A": "①点人口数量最多",
+            "B": "②点人口数量最多",
+            "C": "③点人口数量最少",
+            "D": "②点和④点人口数量相等",
+        },
+        "answer": "",
+        "images": [image_path("figure_05")],
+    },
+    {
+        "id": "G8MAY-GEO-008",
+        "number": 8,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 2,
+        "group_prompt": "一个国家人口增长状况取决于人口出生率和人口死亡率之差。图1中abcd表示四个国家的人口出生率和人口死亡率，图2示意人口自然增长率变化图，图3示意世界人口分布和全球人口数量。读下图，完成第7-8小题。",
+        "stem": "图3中甲、乙、丙、丁四地中，描述正确的是",
+        "options": {
+            "A": "图1中的a国最可能位于甲地",
+            "B": "乙地的人口自然增长率最高",
+            "C": "丙地以黄色人种为主",
+            "D": "丁地因过于寒冷而人口稀疏",
+        },
+        "answer": "",
+        "images": [image_path("figure_05")],
+    },
+    {
+        "id": "G8MAY-GEO-009",
+        "number": 9,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 2,
+        "group_prompt": "读下图“希腊萨索斯岛古镇与新镇分布示意图”和“古镇传统建筑景观图”，完成第9-10小题。",
+        "stem": "萨索斯岛",
+        "options": {
+            "A": "地势中间低，四周高",
+            "B": "河流呈向心状分布",
+            "C": "河流汛期集中于夏季",
+            "D": "城镇大多靠近河流",
+        },
+        "answer": "",
+        "images": [image_path("figure_06")],
+    },
+    {
+        "id": "G8MAY-GEO-010",
+        "number": 10,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 2,
+        "group_prompt": "读下图“希腊萨索斯岛古镇与新镇分布示意图”和“古镇传统建筑景观图”，完成第9-10小题。",
+        "stem": "萨索斯岛的城镇",
+        "options": {
+            "A": "古镇大多分布于平坦开阔地带",
+            "B": "新镇大多依山而建，排列紧密",
+            "C": "夏季的古镇要比新镇更加凉爽",
+            "D": "新镇在夏季可能多发城市内涝",
+        },
+        "answer": "",
+        "images": [image_path("figure_06")],
+    },
+    {
+        "id": "G8MAY-GEO-011",
+        "number": 11,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 2,
+        "group_prompt": "“Beidane”帐篷是非洲北部摩洛哥的传统民居，通常由黑色的山羊或骆驼毛织成的厚毛毡搭成，白天的热量可以散发出去，同时将沙漠的日光变成舒适的微光；下雨时天然纤维会膨胀，足以应对当地罕见的降雨。帐篷可快速拆解、由骆驼运输。读“Beidane”帐篷景观图，完成第11-12小题。",
+        "stem": "“Beidane”帐篷特征与当地环境对应正确的是",
+        "options": {
+            "A": "厚毛毡——气候寒冷",
+            "B": "可快速拆解——游牧的生活方式",
+            "C": "黑色——增加房屋美观",
+            "D": "骆驼运输——交通便利",
+        },
+        "answer": "",
+        "images": [image_path("figure_07")],
+    },
+    {
+        "id": "G8MAY-GEO-012",
+        "number": 12,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 3,
+        "group_prompt": "“Beidane”帐篷是非洲北部摩洛哥的传统民居，通常由黑色的山羊或骆驼毛织成的厚毛毡搭成。读“Beidane”帐篷景观图，完成第11-12小题。",
+        "stem": "传统帐篷依赖手工制作的黑色毛毡，需定期晾晒保养；如今不少游牧家庭改用帆布、尼龙等现代材料，主要是因为",
+        "options": {
+            "A": "原料易获取，可就地取材制作",
+            "B": "耐脏易清洁，减少日常维护的工作量",
+            "C": "质地更厚重，能更好地抵御沙漠严寒",
+            "D": "价格更昂贵，更能体现家庭经济实力",
+        },
+        "answer": "",
+        "images": [image_path("figure_07")],
+    },
+    {
+        "id": "G8MAY-GEO-013",
+        "number": 13,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 3,
+        "group_prompt": "图为“世界某地气温和降水量统计图”。读图完成第13-14小题。",
+        "stem": "该地的气候类型是",
+        "options": {
+            "A": "地中海气候",
+            "B": "热带季风气候",
+            "C": "温带海洋性气候",
+            "D": "亚热带季风气候",
+        },
+        "answer": "",
+        "images": [image_path("figure_08")],
+    },
+    {
+        "id": "G8MAY-GEO-014",
+        "number": 14,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 3,
+        "group_prompt": "图为“世界某地气温和降水量统计图”。读图完成第13-14小题。",
+        "stem": "下列关于该气候的描述，正确的是",
+        "options": {
+            "A": "雨热同期的气候特点有利于农业生产",
+            "B": "该地所代表的气候类型除南极洲外均有分布",
+            "C": "该地所代表的气候类型在亚洲东部最为典型",
+            "D": "该地位于北半球",
+        },
+        "answer": "",
+        "images": [image_path("figure_08")],
+    },
+    {
+        "id": "G8MAY-GEO-015",
+        "number": 15,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 3,
+        "group_prompt": "2025年12月28日，黄河古贤水利枢纽工程导流洞顺利贯通。大坝设置有底层排沙孔和中部泄洪孔，建成后可缓解黄河下游风险。下图示意古贤水利枢纽的位置。读图完成第15-16小题。",
+        "stem": "古贤水利枢纽设置底层排沙孔，主要目的是",
+        "options": {
+            "A": "提升航运能力",
+            "B": "减少库内淤积",
+            "C": "保障农业用水",
+            "D": "减缓河水流速",
+        },
+        "answer": "",
+        "images": [image_path("figure_09")],
+    },
+    {
+        "id": "G8MAY-GEO-016",
+        "number": 16,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 3,
+        "group_prompt": "2025年12月28日，黄河古贤水利枢纽工程导流洞顺利贯通。大坝设置有底层排沙孔和中部泄洪孔，建成后可缓解黄河下游风险。下图示意古贤水利枢纽的位置。读图完成第15-16小题。",
+        "stem": "古贤水利枢纽工程可有效缓解黄河",
+        "options": {
+            "A": "上游植被破坏",
+            "B": "中游水土流失",
+            "C": "下游“地上河”",
+            "D": "上、下游凌汛",
+        },
+        "answer": "",
+        "images": [image_path("figure_09")],
+    },
+    {
+        "id": "G8MAY-GEO-017",
+        "number": 17,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 4,
+        "group_prompt": "2025年1月5日，中国首口超万米科学探索井——深地塔科1井在塔里木盆地地下10910米成功完钻，完成了科学探索和发现油气两大任务，创下亚洲第一、世界第二垂深井的纪录。读图，完成第17-18小题。",
+        "stem": "关于新疆及油气井工程建设，正确的是",
+        "options": {
+            "A": "“山环水绕”是新疆的地形格局",
+            "B": "深地塔科1井北侧A山脉是天山",
+            "C": "新疆境内均为内流河",
+            "D": "油气资源运到长三角和京津唐地区",
+        },
+        "answer": "",
+        "images": [image_path("figure_10")],
+    },
+    {
+        "id": "G8MAY-GEO-018",
+        "number": 18,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 4,
+        "group_prompt": "2025年1月5日，中国首口超万米科学探索井——深地塔科1井在塔里木盆地地下10910米成功完钻。读图，完成第17-18小题。",
+        "stem": "工程修建中会遇到的困难不包括",
+        "options": {
+            "A": "风沙侵袭",
+            "B": "高寒缺氧",
+            "C": "高温缺水",
+            "D": "昼夜温差大",
+        },
+        "answer": "",
+        "images": [image_path("figure_10")],
+    },
+    {
+        "id": "G8MAY-GEO-019",
+        "number": 19,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 4,
+        "group_prompt": "我国是一个多山的国家，山脉构成我国地形的“骨架”。读中国主要山脉分布图，完成第19-20小题。",
+        "stem": "关于我国主要山脉的描述，不正确的是",
+        "options": {
+            "A": "天山山脉是我国东西走向山脉中最北的一列",
+            "B": "喜马拉雅山脉是一座弧形山脉",
+            "C": "阴山山脉大致位于半干旱与干旱地区分界线上",
+            "D": "祁连山脉位于我国季风区与非季风区的分界线上",
+        },
+        "answer": "",
+        "images": [image_path("figure_11")],
+    },
+    {
+        "id": "G8MAY-GEO-020",
+        "number": 20,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 4,
+        "group_prompt": "我国是一个多山的国家，山脉构成我国地形的“骨架”。读中国主要山脉分布图，完成第19-20小题。",
+        "stem": "关于甲、乙、丙、丁四地区的描述，正确的是",
+        "options": {
+            "A": "甲地区石灰岩广布，地形崎岖",
+            "B": "乙地区在夏秋季节易受台风影响",
+            "C": "丙地区位于四川盆地和华北平原交界地带",
+            "D": "丁地区年降水量大，位于我国湿润区",
+        },
+        "answer": "",
+        "images": [image_path("figure_11")],
+    },
+    {
+        "id": "G8MAY-GEO-021",
+        "number": 21,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 4,
+        "group_prompt": "下图为我国的三个省级行政区土地利用结构图。读图完成第21-22小题。",
+        "stem": "甲地区和土地利用类型Ⅰ、Ⅱ分别为",
+        "options": {
+            "A": "云，耕地、居民点及工矿用地",
+            "B": "新，耕地、草地",
+            "C": "川，交通运输用地、草地",
+            "D": "新，耕地、居民点及工矿用地",
+        },
+        "answer": "",
+        "images": [image_path("figure_12")],
+    },
+    {
+        "id": "G8MAY-GEO-022",
+        "number": 22,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 5,
+        "group_prompt": "下图为我国的三个省级行政区土地利用结构图。读图完成第21-22小题。",
+        "stem": "关于甲地区的叙述，正确的是",
+        "options": {
+            "A": "乡村聚落中常见碉房和竹楼",
+            "B": "大陆性气候显著，植被覆盖率高",
+            "C": "水资源短缺，畜牧业为主",
+            "D": "地形以盆地、高原为主",
+        },
+        "answer": "",
+        "images": [image_path("figure_12")],
+    },
+    {
+        "id": "G8MAY-GEO-023",
+        "number": 23,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 5,
+        "group_prompt": "K半岛冬季盛行西北风，夏季盛行东南风，东西向气候区域差异显著。与大陆内部相比，该半岛有着较多古老的生物。下图示意K半岛概况。据此完成第23-24小题。",
+        "stem": "与西侧相比，K半岛东侧",
+        "options": {
+            "A": "冬季降雪量多",
+            "B": "年降雪量多",
+            "C": "冬季降水量多",
+            "D": "夏季降水量多",
+        },
+        "answer": "",
+        "images": [image_path("figure_13")],
+    },
+    {
+        "id": "G8MAY-GEO-024",
+        "number": 24,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 5,
+        "group_prompt": "K半岛冬季盛行西北风，夏季盛行东南风，东西向气候区域差异显著。与大陆内部相比，该半岛有着较多古老的生物。下图示意K半岛概况。据此完成第23-24小题。",
+        "stem": "K半岛有古老的生物是因为K半岛",
+        "options": {"A": "地形较崎岖", "B": "河流稀少", "C": "区域较闭塞", "D": "火山喷发"},
+        "answer": "",
+        "images": [image_path("figure_13")],
+    },
+    {
+        "id": "G8MAY-GEO-025",
+        "number": 25,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 5,
+        "group_prompt": "海洋碳汇渔业又称“不投饵渔业”，是指通过渔业生产活动促进水生生物吸收水体中的二氧化碳，并通过收获水生生物产品，将碳移出水体的生产活动。下图为海洋碳汇渔业流程图。据此完成第25-26小题。",
+        "stem": "我国发展海洋碳汇渔业的主要优势有",
+        "options": {"A": "养殖面积大", "B": "碳排放量大", "C": "自然灾害少", "D": "劳动力充足"},
+        "answer": "",
+        "images": [image_path("figure_14")],
+    },
+    {
+        "id": "G8MAY-GEO-026",
+        "number": 26,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 5,
+        "group_prompt": "海洋碳汇渔业又称“不投饵渔业”。读海洋碳汇渔业流程图，完成第25-26小题。",
+        "stem": "我国发展海洋碳汇渔业，能够：①降低大气中碳浓度；②推动海洋经济的发展；③完全取代传统渔业；④实现渔业可持续发展。",
+        "options": {"A": "①②③", "B": "①③④", "C": "②③④", "D": "①②④"},
+        "answer": "",
+        "images": [image_path("figure_14")],
+    },
+    {
+        "id": "G8MAY-GEO-027",
+        "number": 27,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 5,
+        "group_prompt": "2025年，贵州台江县“村BA”篮球赛再次火爆全国。这项由当地苗族群众自发组织、多民族共同参与的乡村赛事，成为促进民族团结、推动乡村文化振兴的生动案例。赛场边，苗族银饰、侗族大歌等非遗元素与篮球文化交融，吸引全国游客驻足。据此完成第27-28小题。",
+        "stem": "“村BA”赛场边呈现的苗族银饰、侗族大歌等文化形式，反映了我国少数民族",
+        "options": {
+            "A": "语言文字丰富多彩",
+            "B": "文化特色单一，缺乏多样性",
+            "C": "大杂居、小聚居、交错居住",
+            "D": "文化丰富多彩且得到传承发展",
+        },
+        "answer": "",
+        "images": [],
+    },
+    {
+        "id": "G8MAY-GEO-028",
+        "number": 28,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 5,
+        "group_prompt": "2025年，贵州台江县“村BA”篮球赛再次火爆全国。这项由当地苗族群众自发组织、多民族共同参与的乡村赛事，成为促进民族团结、推动乡村文化振兴的生动案例。据此完成第27-28小题。",
+        "stem": "借助“村BA”赛事助力乡村振兴、实现可持续发展，下列举措不合理的是",
+        "options": {
+            "A": "完善乡村交通、住宿等基础设施",
+            "B": "打造民俗体验类乡村旅游项目",
+            "C": "不断提高景点门票价格，助力地方经济发展",
+            "D": "培育推广本地特色农产品",
+        },
+        "answer": "",
+        "images": [],
+    },
+    {
+        "id": "G8MAY-GEO-029",
+        "number": 29,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 5,
+        "group_prompt": "黄花滩生态移民区位于甘肃省古浪县，地形平坦，气候干旱。下图为“黄花滩生态移民区种植业和畜牧业相结合的农业模式示意图”。据此完成第29-31小题。",
+        "stem": "该生态移民区修建蓄水池的主要目的是",
+        "options": {"A": "保障灌溉用水", "B": "提供工业用水", "C": "发展水产养殖", "D": "调节当地气候"},
+        "answer": "",
+        "images": [image_path("figure_15")],
+    },
+    {
+        "id": "G8MAY-GEO-030",
+        "number": 30,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 6,
+        "group_prompt": "黄花滩生态移民区位于甘肃省古浪县，地形平坦，气候干旱。下图为“黄花滩生态移民区种植业和畜牧业相结合的农业模式示意图”。据此完成第29-31小题。",
+        "stem": "该地区种植玉米的优势自然条件有",
+        "options": {"A": "降水丰沛", "B": "光照充足", "C": "草场广布", "D": "黑土肥沃"},
+        "answer": "",
+        "images": [image_path("figure_15")],
+    },
+    {
+        "id": "G8MAY-GEO-031",
+        "number": 31,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 6,
+        "group_prompt": "黄花滩生态移民区位于甘肃省古浪县，地形平坦，气候干旱。下图为“黄花滩生态移民区种植业和畜牧业相结合的农业模式示意图”。据此完成第29-31小题。",
+        "stem": "这种农业模式的主要优点是",
+        "options": {"A": "提高农业效益", "B": "改良作物品种", "C": "节约农业用水", "D": "减轻水土流失"},
+        "answer": "",
+        "images": [image_path("figure_15")],
+    },
+    {
+        "id": "G8MAY-GEO-032",
+        "number": 32,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 6,
+        "group_prompt": "图为“不同纬度一年中昼长变化折线图”，a、b、c为三条不同纬度上所做出的折线，①②③④为时间先后顺序的不同日期，其中①为春分日。据此完成第32-33小题。",
+        "stem": "在a纬度附近",
+        "options": {"A": "气候寒冷", "B": "一年中有半年极昼", "C": "有太阳直射现象", "D": "终年高温多雨"},
+        "answer": "",
+        "images": [image_path("figure_16")],
+    },
+    {
+        "id": "G8MAY-GEO-033",
+        "number": 33,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 6,
+        "group_prompt": "图为“不同纬度一年中昼长变化折线图”，a、b、c为三条不同纬度上所做出的折线，①②③④为时间先后顺序的不同日期，其中①为春分日。据此完成第32-33小题。",
+        "stem": "如果b地在北半球，则在②日期前后",
+        "options": {
+            "A": "北京地区易出现沙尘暴天气",
+            "B": "长江流域进入枯水期",
+            "C": "黄河和叶尼塞河同时出现凌汛",
+            "D": "此日过后海南的昼长渐变短",
+        },
+        "answer": "",
+        "images": [image_path("figure_16")],
+    },
+    {
+        "id": "G8MAY-GEO-034",
+        "number": 34,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 6,
+        "group_prompt": "下图为我国某铁路干线沿线气候资料图。读图完成第34-35小题。",
+        "stem": "该铁路干线可能是",
+        "options": {"A": "陇海—兰新线", "B": "京沪线", "C": "京哈—京广线", "D": "沪昆线"},
+        "answer": "",
+        "images": [image_path("figure_17")],
+    },
+    {
+        "id": "G8MAY-GEO-035",
+        "number": 35,
+        "type": "single_choice",
+        "score": 2,
+        "source_page": 6,
+        "group_prompt": "下图为我国某铁路干线沿线气候资料图。读图完成第34-35小题。",
+        "stem": "该铁路干线沿线",
+        "options": {
+            "A": "①地位于干旱区",
+            "B": "②地农业用地多为水田",
+            "C": "③地位于中温带",
+            "D": "④地为亚热带季风气候",
+        },
+        "answer": "",
+        "images": [image_path("figure_17")],
+    },
+    {
+        "id": "G8MAY-GEO-036",
+        "number": 36,
+        "type": "综合题",
+        "score": 10,
+        "source_page": 7,
+        "group_prompt": "阅读图文材料，完成下面的题目。材料一：几内亚位于非洲西部，素有西非“水塔”之称，水能资源丰富，但水能开发率低。我国援助几内亚建造的凯乐塔水电站是该国最大的水电站，该水电站的建成为几内亚经济发展注入强大动力。材料二：几内亚矿产资源丰富，其中铝土矿探明储量大，且易于开采。但炼铝用电量极大，是高耗能行业。近年来，几内亚与中国两国签署经济技术合作协定，我国企业陆续在几内亚投资发展铝土矿开采和加工工业。材料三：图1为“几内亚位置示意图”，图2为“几内亚凯乐塔水电站图”，图3为“孔库雷河沿岸多年平均气温和降水量图”。",
+        "stem": "（1）几内亚濒临____洋，若几内亚向中国出口铝土矿，常采用____运输（交通运输方式），几内亚吸引我国企业投资发展铝土矿开采和加工的原因是____（2分）。\n（2）我国充分考虑当地自然环境，为几内亚设计了凯乐塔水电站。孔库雷河沿岸为____气候，5—10月河流水位较____（高/低），设计溢流坝可有效泄洪，保障电站安全运行。\n（3）我国与几内亚之间在经济、社会发展方面的合作属于“____”，简述在与几内亚经济合作中我国具有的优势有____。\n（4）除了发电，凯乐塔水电站的建成对几内亚发展的有利影响有____（2分）。",
+        "options": {},
+        "answer": "",
+        "images": [image_path("figure_18")],
+    },
+    {
+        "id": "G8MAY-GEO-037",
+        "number": 37,
+        "type": "综合题",
+        "score": 10,
+        "source_page": 7,
+        "group_prompt": "阅读图文材料，完成第37小题。材料一：“茶者，南方之嘉木也”，河北多地近年来也实现了“南茶北种”。在这里，温室大棚为茶叶“搭起了屋子”；缺水时利用智能化系统自动进行灌溉。农业科技的发展，让茶香萦绕燕赵大地。材料二：茶树喜温喜湿，适宜生长在温度10℃-35℃、年降水量在800mm以上、空气湿度大、坡度和缓、排水条件良好的地区。材料三：图1为河北“南茶北种”主要茶园分布图和年平均气温和降水量图，图2为我国茶叶四大产区分布图。",
+        "stem": "（1）河北省简称____，东濒____海，“南茶北种”茶园西临____山脉。\n（2）我国四大茶区，从干湿状况来看，大部分位于____区，茶叶四大产区位于我国四大地理区域中的____地区，和华南产区相比，河北的茶叶生长周期____（长/短）。\n（3）根据茶树生长习性，分析河北省种植茶叶需要克服的不利自然条件____（2分）。\n（4）河北省部分地区是否可以将小麦改种茶叶以提高收益，表明观点并说明理由____（理由1点1分，2分）。",
+        "options": {},
+        "answer": "",
+        "images": [image_path("figure_19")],
+    },
+    {
+        "id": "G8MAY-GEO-038",
+        "number": 38,
+        "type": "综合题",
+        "score": 10,
+        "source_page": 8,
+        "group_prompt": "阅读图文材料，完成第38小题。材料一：海南地处南海要冲，4小时飞行圈可覆盖亚洲21个国家和地区，囊括全球约47%的人口。2025年12月18日，海南自贸港正式启动全岛封关运作，封关后进口“零关税”商品比例大幅提升，购物人数、新增外资企业、进出境游客均大幅增长。材料二：海南培育“五向图强”特色产业链：向种图强——攻关农业核心技术；向海图强——打造深海科技与海洋产业高地；向天图强——推进商业航天发射场建设；向绿图强——发展绿色低碳产业；向数图强——推进产业数字化转型。材料三：下图为海南省地理位置和地形图。",
+        "stem": "（1）根据图中海南岛的地势特征，判断海南岛河流的流向为____，其中____是海南最长的河流。\n（2）海南全力打造“向天图强”产业，我国首个商业航天发射场位于海南省____市，与我国其他发射场相比具备的优势有____（2分）。\n（3）为实现“向绿图强”，海南省可大力发展的新能源有____（写出一种即可），海南“向海图强”致力于打造现代海洋产业集聚地，试分析海南发展海洋经济的有利自然条件____（2分）。\n（4）结合材料一，分析海南自由贸易港全岛封关运作对旅游业和对外贸易的影响____（2分）。",
+        "options": {},
+        "answer": "",
+        "images": [image_path("figure_20")],
+    },
+]
+
+
+def crop_figures() -> list[dict]:
+    IMG_DIR.mkdir(exist_ok=True)
+    figures = []
+    for figure_id, page_num, box, title, linked_questions in FIGURES:
+        page_path = PAGES / f"page-{page_num:02d}.png"
+        image = Image.open(page_path)
+        cropped = image.crop(box).convert("RGB")
+        cropped = ImageOps.autocontrast(cropped, cutoff=1)
+        out_path = IMG_DIR / f"{figure_id}.png"
+        cropped.save(out_path, optimize=True)
+        figures.append(
+            {
+                "id": figure_id,
+                "title": title,
+                "source_page": page_num,
+                "file": image_path(figure_id),
+                "linked_question_numbers": linked_questions,
+            }
+        )
+    return figures
+
+
+def write_outputs(figures: list[dict]) -> None:
+    data = {
+        "source": {
+            "id": "grade8_may_practice",
+            "title": "2025-2026学年度第二学期八年级地理学科5月独立练习",
+            "subject": "地理",
+            "exam_time_minutes": None,
+            "full_score": 100,
+            "original_pdf": "地理试卷-八年级地理5月练习.pdf",
+            "notes": "本题库由扫描PDF经OCR初提取并结合页面图人工校对生成；当前未提供官方答案卷，answer字段暂为空。",
+        },
+        "figures": figures,
+        "questions": QUESTIONS,
+    }
+    OUT_JSON.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    with OUT_CSV.open("w", encoding="utf-8-sig", newline="") as f:
+        writer = csv.DictWriter(
+            f,
+            fieldnames=[
+                "id",
+                "number",
+                "type",
+                "score",
+                "source_page",
+                "group_prompt",
+                "stem",
+                "option_A",
+                "option_B",
+                "option_C",
+                "option_D",
+                "answer",
+                "images",
+            ],
+        )
+        writer.writeheader()
+        for q in QUESTIONS:
+            options = q.get("options", {})
+            writer.writerow(
+                {
+                    "id": q["id"],
+                    "number": q["number"],
+                    "type": q["type"],
+                    "score": q["score"],
+                    "source_page": q["source_page"],
+                    "group_prompt": q["group_prompt"],
+                    "stem": q["stem"],
+                    "option_A": options.get("A", ""),
+                    "option_B": options.get("B", ""),
+                    "option_C": options.get("C", ""),
+                    "option_D": options.get("D", ""),
+                    "answer": q.get("answer", ""),
+                    "images": ";".join(q.get("images", [])),
+                }
+            )
+
+    lines = [
+        "# 2025-2026学年度第二学期八年级地理学科5月独立练习题库",
+        "",
+        "说明：由扫描PDF经OCR初提取并结合页面图人工校对生成；当前未提供官方答案卷，答案字段暂为空。",
+        "",
+    ]
+    for q in QUESTIONS:
+        lines.append(f"## {q['number']}. {q['stem']}")
+        lines.append("")
+        if q.get("group_prompt"):
+            lines.append(f"> {q['group_prompt']}")
+            lines.append("")
+        for key, value in q.get("options", {}).items():
+            lines.append(f"- {key}. {value}")
+        if q.get("images"):
+            lines.append("")
+            lines.append("配图：")
+            for img in q["images"]:
+                lines.append(f"- {img}")
+        lines.append("")
+        lines.append(f"答案：{q.get('answer', '')}")
+        lines.append("")
+    OUT_MD.write_text("\n".join(lines), encoding="utf-8")
+
+
+def main() -> None:
+    figures = crop_figures()
+    write_outputs(figures)
+    print(f"Generated {OUT_JSON}")
+    print(f"Questions: {len(QUESTIONS)}")
+    print(f"Figures: {len(figures)}")
+
+
+if __name__ == "__main__":
+    main()

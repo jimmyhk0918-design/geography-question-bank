@@ -10,5 +10,11 @@
     "title": "2024年海南省中考地理真题",
     "url": "./geography_bank/hainan_2024_exam/hainan_2024_geography_exam_question_bank.json",
     "basePath": "./geography_bank/hainan_2024_exam"
+  },
+  {
+    "id": "grade8_may_practice",
+    "title": "八年级地理5月独立练习",
+    "url": "./geography_bank/grade8_may_practice/grade8_may_practice_question_bank.json",
+    "basePath": "./geography_bank/grade8_may_practice"
   }
 ]

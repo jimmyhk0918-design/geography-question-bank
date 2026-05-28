@@ -14,5 +14,6 @@ geography_bank/render_pdf.mjs
 geography_bank/ocr_pages.mjs
 geography_bank/extract_text_layer.mjs
 geography_bank/**/render_pdf.mjs
+geography_bank/**/ocr_pages.mjs
 geography_bank/**/extract_text_layer.mjs
 geography_bank/**/question_images_contact_sheet.jpg
