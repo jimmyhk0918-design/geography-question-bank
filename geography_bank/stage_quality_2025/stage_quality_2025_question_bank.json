@@ -1,0 +1,909 @@
+{
+  "source": {
+    "id": "stage_quality_2025",
+    "title": "2025-2026学年第二学期阶段性质量评估地理科练习题",
+    "subject": "地理",
+    "exam_time_minutes": null,
+    "full_score": 100,
+    "original_pdf": null,
+    "original_files": [
+      "扫描.jpeg",
+      "扫描 1.jpeg",
+      "扫描 2.jpeg",
+      "扫描 3.jpeg",
+      "扫描 4.jpeg",
+      "扫描 5.jpeg",
+      "扫描 6.jpeg",
+      "扫描 7.jpeg"
+    ],
+    "notes": "本题库由8页JPEG扫描图人工提取并裁剪题图生成；当前未提供官方答案卷，answer字段暂为空。"
+  },
+  "figures": [
+    {
+      "id": "figure_01",
+      "title": "嫦娥六号月球探测器与太阳系中心天体轨道示意图",
+      "source_page": 1,
+      "file": "question_images/figure_01.png",
+      "linked_question_numbers": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "figure_02",
+      "title": "地球公转示意图",
+      "source_page": 1,
+      "file": "question_images/figure_02.png",
+      "linked_question_numbers": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "figure_03",
+      "title": "世界人口分布图",
+      "source_page": 2,
+      "file": "question_images/figure_03.png",
+      "linked_question_numbers": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "id": "figure_04",
+      "title": "阿留申群岛地震震中位置示意图",
+      "source_page": 2,
+      "file": "question_images/figure_04.png",
+      "linked_question_numbers": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": "figure_05",
+      "title": "候鸟老人迁移漫画",
+      "source_page": 3,
+      "file": "question_images/figure_05.png",
+      "linked_question_numbers": [
+        12,
+        13
+      ]
+    },
+    {
+      "id": "figure_06",
+      "title": "黄河、长江示意图",
+      "source_page": 3,
+      "file": "question_images/figure_06.png",
+      "linked_question_numbers": [
+        14,
+        15
+      ]
+    },
+    {
+      "id": "figure_07",
+      "title": "我国劳动适龄人口比重及增长率变化图",
+      "source_page": 3,
+      "file": "question_images/figure_07.png",
+      "linked_question_numbers": [
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "figure_08",
+      "title": "四个省区位置示意图",
+      "source_page": 4,
+      "file": "question_images/figure_08.png",
+      "linked_question_numbers": [
+        19
+      ]
+    },
+    {
+      "id": "figure_09",
+      "title": "中国地势三级阶梯分布图",
+      "source_page": 4,
+      "file": "question_images/figure_09.png",
+      "linked_question_numbers": [
+        20,
+        21
+      ]
+    },
+    {
+      "id": "figure_10",
+      "title": "乌蒙山片区位置及资源分布示意图",
+      "source_page": 4,
+      "file": "question_images/figure_10.png",
+      "linked_question_numbers": [
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "id": "figure_11",
+      "title": "中国四大牧区分布图",
+      "source_page": 5,
+      "file": "question_images/figure_11.png",
+      "linked_question_numbers": [
+        25,
+        26,
+        27
+      ]
+    },
+    {
+      "id": "figure_12",
+      "title": "北方地区轮廓与四列山脉示意图",
+      "source_page": 5,
+      "file": "question_images/figure_12.png",
+      "linked_question_numbers": [
+        28,
+        29
+      ]
+    },
+    {
+      "id": "figure_13",
+      "title": "我国机器人产业园区分布和企业地区比重示意图",
+      "source_page": 6,
+      "file": "question_images/figure_13.png",
+      "linked_question_numbers": [
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "id": "figure_14",
+      "title": "某区域等温线分布图",
+      "source_page": 6,
+      "file": "question_images/figure_14.png",
+      "linked_question_numbers": [
+        33,
+        34
+      ]
+    },
+    {
+      "id": "figure_15",
+      "title": "地球某时刻太阳光照示意图",
+      "source_page": 6,
+      "file": "question_images/figure_15.png",
+      "linked_question_numbers": [
+        35
+      ]
+    },
+    {
+      "id": "figure_16",
+      "title": "宜昌某地等高线示意图",
+      "source_page": 7,
+      "file": "question_images/figure_16.png",
+      "linked_question_numbers": [
+        36
+      ]
+    },
+    {
+      "id": "figure_17",
+      "title": "粤港澳大湾区位置示意图",
+      "source_page": 7,
+      "file": "question_images/figure_17.png",
+      "linked_question_numbers": [
+        37
+      ]
+    },
+    {
+      "id": "figure_18",
+      "title": "海南未来产业园位置交通图和海南岛地理事物分布图",
+      "source_page": 8,
+      "file": "question_images/figure_18.png",
+      "linked_question_numbers": [
+        38
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "STAGE2025-GEO-001",
+      "number": 1,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "2024年6月，“嫦娥六号”月球探测器实现了人类首次月背着陆，采集并带回约2千克的月背土壤样本。中国又获得探月工程的重大成果，为2030年前实现中国人首次登陆月球奠定了基础。图2是太阳系中心天体轨道示意图。据此完成第1-2小题。",
+      "stem": "据探测器观测，月球上没有氧气和液态水，昼夜温差极大，一片荒凉的月表布满了陨石坑。相比较而言，地球上生机勃勃的主要原因是：①相对安全的宇宙环境；②适中的日地距离；③液态水的存在；④大气层保护下适宜的温度；⑤有和月球一样的土壤。",
+      "options": {
+        "A": "①②③⑤",
+        "B": "①②③④",
+        "C": "①②④⑤",
+        "D": "②③④⑤"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_01.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-002",
+      "number": 2,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "读太阳系中心天体轨道示意图，完成第1-2小题。",
+      "stem": "从图2中可以看出",
+      "options": {
+        "A": "金星距离太阳最近",
+        "B": "各行星的运转轨道会交叉",
+        "C": "离地球最近的行星是土星",
+        "D": "火星—木星之间有一个小行星带"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_01.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-003",
+      "number": 3,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "",
+      "stem": "我国进行太空探索的意义主要有：①开发利用太空中丰富的生物资源；②推动人类科技技术的进步，促进新资源的开发；③认识宇宙环境对地球的影响；④能更好地保护地球家园。",
+      "options": {
+        "A": "①②③",
+        "B": "②③④",
+        "C": "①③④",
+        "D": "①②④"
+      },
+      "answer": "",
+      "images": []
+    },
+    {
+      "id": "STAGE2025-GEO-004",
+      "number": 4,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "2025年8月7日至17日，第12届世界运动会（简称“世运会”）在成都成功举办。本届世运会上中国体育代表团金牌、奖牌总数均创历史新高。读地球公转示意图，完成第4-6小题。",
+      "stem": "世运会举办期间，地球位于公转轨道",
+      "options": {
+        "A": "A—B之间",
+        "B": "B—C之间",
+        "C": "C—D之间",
+        "D": "D—A之间"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_02.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-005",
+      "number": 5,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "读地球公转示意图，完成第4-6小题。",
+      "stem": "世运会举办期间，太阳直射点",
+      "options": {
+        "A": "位于赤道与北回归线间，且向北移动",
+        "B": "位于赤道与南回归线间，且向南移动",
+        "C": "位于赤道与南回归线间，且向北移动",
+        "D": "位于赤道与北回归线间，且向南移动"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_02.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-006",
+      "number": 6,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "读地球公转示意图，完成第4-6小题。",
+      "stem": "从世运会结束到国庆节，成都的昼长变化情况是",
+      "options": {
+        "A": "逐渐变短",
+        "B": "逐渐变长",
+        "C": "先变长，后变短",
+        "D": "先变短，后变长"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_02.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-007",
+      "number": 7,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "世界人口的分布不均衡，文化习俗具有多样性。读世界人口分布图，完成第7-9小题。",
+      "stem": "世界的人口主要分布在：①中低纬地区；②中高纬地区；③内陆地区；④沿海地区；⑤平原；⑥山地。",
+      "options": {
+        "A": "①③⑤",
+        "B": "①④⑤",
+        "C": "②③⑥",
+        "D": "②④⑥"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_03.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-008",
+      "number": 8,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "读世界人口分布图，完成第7-9小题。",
+      "stem": "影响图中甲、乙、丙、丁四地人口稀疏的主要自然原因对应正确的是",
+      "options": {
+        "A": "甲地——纬度低，气候湿热",
+        "B": "乙地——位于内陆，降水少",
+        "C": "丙地——海拔高，高寒缺氧",
+        "D": "丁地——沿海地区，降水多"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_03.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-009",
+      "number": 9,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "读世界人口分布图，完成第7-9小题。",
+      "stem": "甲地的人种主要是",
+      "options": {
+        "A": "黄色人种",
+        "B": "白色人种",
+        "C": "黑色人种",
+        "D": "混血人种"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_03.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-010",
+      "number": 10,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "2025年3月21日22时53分，阿留申群岛发生6.2级地震，5分钟后，同一区域又发生5.5级地震。专家提醒沿海居民需警惕地震引发的其他灾害风险，及时关注预警信息。下图示意本次地震震中位置。据此完成第10-11小题。",
+      "stem": "造成阿留申群岛地震的原因是",
+      "options": {
+        "A": "亚欧板块与印度洋板块的碰撞挤压",
+        "B": "太平洋板块与印度洋板块的碰撞挤压",
+        "C": "亚欧板块与太平洋板块的碰撞挤压",
+        "D": "太平洋板块与美洲板块的碰撞挤压"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_04.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-011",
+      "number": 11,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "下图示意阿留申群岛地震震中位置。据此完成第10-11小题。",
+      "stem": "沿海居民需要防范可能由地震引发的",
+      "options": {
+        "A": "海啸",
+        "B": "暴雨",
+        "C": "台风",
+        "D": "泥石流"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_04.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-012",
+      "number": 12,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "近些年，北方一些老年人开始重视康养，每年搭乘“越冬专列”在南、北方地区间往返，过起了候鸟式的生活。读《候鸟老人的迁移》漫画，完成第12-13小题。",
+      "stem": "我国“候鸟老人”现象形成的主要自然原因是",
+      "options": {
+        "A": "冬季南北降水差异大",
+        "B": "冬季南北温差大",
+        "C": "夏季南北降水差异大",
+        "D": "夏季南北温差大"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_05.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-013",
+      "number": 13,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "读《候鸟老人的迁移》漫画，完成第12-13小题。",
+      "stem": "“冬天去南方”中的“南方”最有可能指的是",
+      "options": {
+        "A": "海南省",
+        "B": "甘肃省",
+        "C": "陕西省",
+        "D": "河北省"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_05.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-014",
+      "number": 14,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "“一碗水，半碗泥”，黄河是世界上含沙量最大的河流。黄河中游河段含沙量剧增，下游泥沙淤积严重，水患多发。治理黄河是事关中华民族伟大复兴和永续发展的千秋大计，长江发源于“世界屋脊”——青藏高原的唐古拉山脉各拉丹冬峰西南侧。干流流经11个省级行政区（八省二市一区），于崇明岛以东注入东海。读“黄河、长江示意图”，完成第14-15小题。",
+      "stem": "治理黄河的关键在于图中阴影所示区域的水土保持，下列做法不合理的是",
+      "options": {
+        "A": "开垦陡坡地，大力发展粮食生产",
+        "B": "植树种草，建设护坡林草带",
+        "C": "坡脚建挡土坝、护坡保水土",
+        "D": "合理安排生产活动，退耕还林还草"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_06.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-015",
+      "number": 15,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "读“黄河、长江示意图”，完成第14-15小题。",
+      "stem": "关于黄河、长江共同特征的说法，正确的是：①都属于太平洋水系；②均流经四川省；③大致都自西向东流；④水能资源都集中在中上游河段；⑤都发源于唐古拉山脉；⑥中下游都有结冰期。",
+      "options": {
+        "A": "①②③⑥",
+        "B": "①②③⑤",
+        "C": "②③④⑤",
+        "D": "①②③④"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_06.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-016",
+      "number": 16,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "《关于实施渐进式延迟法定退休年龄的决定》于2025年1月1日开始施行。下图为我国劳动适龄人口（15-64岁）比重及增长率变化（含预测）示意图，据此完成第16-18小题。",
+      "stem": "我国劳动适龄人口增长率",
+      "options": {
+        "A": "先升后降",
+        "B": "持续上升",
+        "C": "波动下降",
+        "D": "持续下降"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_07.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-017",
+      "number": 17,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "读我国劳动适龄人口比重及增长率变化图，完成第16-18小题。",
+      "stem": "我国当前主要面临的人口问题是",
+      "options": {
+        "A": "劳动力过剩",
+        "B": "人口年龄结构年轻化",
+        "C": "劳动力减少",
+        "D": "城乡人口分布不均"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_07.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-018",
+      "number": 18,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "读我国劳动适龄人口比重及增长率变化图，完成第16-18小题。",
+      "stem": "为促进人口与经济、社会、资源和环境可持续发展，下列措施合理的有：①大量引进外来移民；②完善育儿补贴政策；③逐步延迟法定退休年龄；④推动产业升级，提高劳动生产率。",
+      "options": {
+        "A": "①②③",
+        "B": "①③④",
+        "C": "①②④",
+        "D": "②③④"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_07.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-019",
+      "number": 19,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "",
+      "stem": "下图中四个省区少数民族及其分布的组合中，正确的是",
+      "options": {
+        "A": "高山族—①",
+        "B": "壮族—②",
+        "C": "回族—③",
+        "D": "傣族—④"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_08.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-020",
+      "number": 20,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "山，是我们大地的脊梁；河，是我们民族的血脉；诗，是我们文化的瑰宝。下图示意中国地势三级阶梯分布，据此完成第20-21小题。",
+      "stem": "我国沿36°N线绘制的地形剖面示意图是",
+      "options": {
+        "A": "A",
+        "B": "B",
+        "C": "C",
+        "D": "D"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_09.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-021",
+      "number": 21,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "读中国地势三级阶梯分布图，完成第20-21小题。",
+      "stem": "下列诗句描述的山脉中，既属于地势阶梯分界线，又呈东北-西南走向的是",
+      "options": {
+        "A": "“秦岭巍峨分南北，气候水文两重天”",
+        "B": "“昆仑万仞插云霄，横亘西疆天路遥”",
+        "C": "“太行千里势如龙，隔断东西百重重”",
+        "D": "“贺兰山下果园成，塞北江南旧有名”"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_09.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-022",
+      "number": 22,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "乌蒙山片区位于云南省、四川省、贵州省三地的结合部，是我国经济相对落后的地区之一。下图为乌蒙山片区位置示意图。据此完成第22-24小题。",
+      "stem": "乌蒙山片区所在的高原是",
+      "options": {
+        "A": "青藏高原",
+        "B": "云贵高原",
+        "C": "黄土高原",
+        "D": "内蒙古高原"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_10.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-023",
+      "number": 23,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "乌蒙山片区位于云南省、四川省、贵州省三地的结合部，是我国经济相对落后的地区之一。下图为乌蒙山片区位置示意图。据此完成第22-24小题。",
+      "stem": "推测乌蒙山片区经济落后的主要自然原因是",
+      "options": {
+        "A": "气候寒冷，位于寒温带",
+        "B": "资源短缺，能源匮乏",
+        "C": "降水稀少，属于干旱区",
+        "D": "地表崎岖，灾害多发"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_10.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-024",
+      "number": 24,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "乌蒙山片区位于云南省、四川省、贵州省三地的结合部，是我国经济相对落后的地区之一。下图为乌蒙山片区位置示意图。据此完成第22-24小题。",
+      "stem": "目前，乌蒙山片区要实现“乡村全面振兴”可以大力发展",
+      "options": {
+        "A": "生态旅游业",
+        "B": "高新技术产业",
+        "C": "金融服务业",
+        "D": "机器人制造业"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_10.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-025",
+      "number": 25,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "借牧越冬是指秋冬季节，牧民将牛羊转移到低海拔的农区，利用农作物采收后留下的秸秆进行放牧的生产方式，实现生态保护与生产发展双赢。近年来，青海牧区和内蒙古牧区的牧民们常把牛羊运到山下河西走廊农区“借牧越冬”。下图为中国四大牧区分布图。据此完成第25-27小题。",
+      "stem": "我国四大牧区主要分布在",
+      "options": {
+        "A": "湿润区",
+        "B": "半湿润区",
+        "C": "半干旱、干旱区",
+        "D": "平原丘陵区"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_11.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-026",
+      "number": 26,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "读中国四大牧区分布图，完成第25-27小题。",
+      "stem": "牧民选择到河西走廊农区“借牧越冬”，主要原因是河西走廊",
+      "options": {
+        "A": "地处山麓，冬季温暖，秸秆资源丰富",
+        "B": "冬季草场茂密，适合发展大规模放牧",
+        "C": "当地人口稀少，对牲畜活动干扰较小",
+        "D": "地处牧区中心，牲畜运输的距离较短"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_11.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-027",
+      "number": 27,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "读中国四大牧区分布图，完成第25-27小题。",
+      "stem": "从可持续发展角度看，“借牧越冬”有利于：①减轻牧区冬季草场压力；②促进农耕区粮食增产；③促进农牧区协同发展；④减少牲畜冬季损失。",
+      "options": {
+        "A": "①②③",
+        "B": "①②④",
+        "C": "①③④",
+        "D": "②③④"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_11.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-028",
+      "number": 28,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "读右图北方地区轮廓图，完成第28-29小题。",
+      "stem": "下列有关图中四列山脉的叙述，正确的是",
+      "options": {
+        "A": "①山脉东西两侧农业类型一致",
+        "B": "②山脉林区适合野生人参的生长",
+        "C": "③山脉东西两侧地形类型相同",
+        "D": "④山脉南北两侧主要粮食作物相同"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_12.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-029",
+      "number": 29,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "读右图北方地区轮廓图，完成第28-29小题。",
+      "stem": "下列关于甲乙两地地理差异的叙述，正确的是",
+      "options": {
+        "A": "甲地为“暖温带”，乙地为“寒温带”",
+        "B": "甲地种“冬小麦”，乙地种“春小麦”",
+        "C": "甲地是“黑土地”，乙地是“黄土地”",
+        "D": "甲地属“半湿润区”，乙地属“湿润区”"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_12.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-030",
+      "number": 30,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 6,
+      "group_prompt": "2025年央视春晚舞台上，16个人形机器人与真人舞蹈演员一同上演了“AI机器人秧歌”，下图为我国机器人产业园区分布示意图和我国不同地区机器人企业比重示意图。阅读材料，据此完成第30-31小题。",
+      "stem": "春晚亮相的人形机器人主要体现了我国工业发展的哪个方向？",
+      "options": {
+        "A": "传统重工业转型",
+        "B": "高新技术产业突破",
+        "C": "劳动密集型产业升级",
+        "D": "能源密集型产业扩张"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_13.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-031",
+      "number": 31,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 6,
+      "group_prompt": "读我国机器人产业园区分布示意图和我国不同地区机器人企业比重示意图，完成第30-31小题。",
+      "stem": "我国人形机器人企业主要分布地区及优势是",
+      "options": {
+        "A": "中部地区，消费市场广阔",
+        "B": "东部地区，科技人才集中",
+        "C": "西北地区，矿产资源丰富",
+        "D": "东北地区，气候条件优越"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_13.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-032",
+      "number": 32,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 6,
+      "group_prompt": "",
+      "stem": "在我国工业生产中，也在大规模使用工业机器人，它们的使用有助于：①降低企业初始建厂的资金支出；②增加普通工人的就业机会；③提高工业生产效率；④降低企业劳动力成本。",
+      "options": {
+        "A": "①②",
+        "B": "②③",
+        "C": "①④",
+        "D": "③④"
+      },
+      "answer": "",
+      "images": []
+    },
+    {
+      "id": "STAGE2025-GEO-033",
+      "number": 33,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 6,
+      "group_prompt": "读某区域等温线分布图，图中a、b、c代表不同的气温值，①、②两地同纬度，③、④两地同纬度，据此完成第33-34小题。",
+      "stem": "若a>b>c，关于①②③④四地气温的比较，正确的是",
+      "options": {
+        "A": "①<②<③<④",
+        "B": "④<③<②<①",
+        "C": "③<④<②<①",
+        "D": "②<①<③<④"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_14.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-034",
+      "number": 34,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 6,
+      "group_prompt": "读某区域等温线分布图，完成第33-34小题。",
+      "stem": "若a>b>c，下列说法正确的是",
+      "options": {
+        "A": "①地等温线向低纬度凸出",
+        "B": "若为当地夏季，则②为海洋",
+        "C": "若为当地冬季，则③为陆地",
+        "D": "④可能在北半球"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_14.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-035",
+      "number": 35,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 6,
+      "group_prompt": "",
+      "stem": "下图为地球某时刻太阳光照示意图，图中阴影部分表示黑夜，箭头表示地球自转方向。读图判断下列说法正确的是",
+      "options": {
+        "A": "①点比③点早看到日出",
+        "B": "此时刻②点的白昼比①点短",
+        "C": "从③点沿经线不改变方向可以直接到达②点",
+        "D": "④点的经纬度是（23.5°S，90°E）"
+      },
+      "answer": "",
+      "images": [
+        "question_images/figure_15.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-036",
+      "number": 36,
+      "type": "综合题",
+      "score": 10,
+      "source_page": 7,
+      "group_prompt": "读“宜昌某地等高线示意图”并结合材料完成下列问题。材料：湖北省宜昌市某县有一个名叫“雨水荒”的小村落。如同它的名字，“饮水难”成为当地百姓的一块心病。宜昌市水利部门与当地政府共同研究，启动引水工程，一股清泉水“爬到”了“雨水荒”。",
+      "stem": "（1）据图可知，宜昌某县地形类型以____为主，虚线①表示地形部位为____，小河干流的流向大致是____，该等高线地形图缺少地图“语言”（即地图的三要素）中的____。\n（2）引水工程拟在A、B、C三处中，选取一处配套修建供给全村生产生活用水的蓄水池。为了方便日后可以实现自流引水，你认为选在何处更合理？请说明理由____。\n（3）从M到N的图上距离是2cm，实际直线距离约____千米，而当地“村村通”公路修建得弯弯曲曲，公路里程远大于MN间的直线距离，请说明这样修建的理由____。\n（4）D处位于“雨水荒”的____方向，“雨水荒”村及周边自然环境优美，有村民想在D处修建旅游民宿，满足人们夏季避暑的需求，你认为可行吗？为什么？（2分）",
+      "options": {},
+      "answer": "",
+      "images": [
+        "question_images/figure_16.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-037",
+      "number": 37,
+      "type": "综合题",
+      "score": 10,
+      "source_page": 7,
+      "group_prompt": "阅读图文材料，完成下列要求。材料一：粤港澳大湾区是中国开放程度最高、经济活力最强的区域之一，是中国建设世界级城市群和参与全球竞争的重要空间载体，下图示意粤港澳大湾区位置。材料二：珠澳大桥、深中通道等标志性工程建成通车，推动粤港澳大湾区互融互通，从香港驾车到珠海、澳门仅需30分钟，香港往来广州缩短至1小时以内，“1小时生活圈”基本形成，粤港澳大湾区涌现出一大批“双城打工人”。",
+      "stem": "（1）粤港澳大湾区位于____（河流）入海口，南临____海，包括____省中南部地区的9个城市及两个特别行政区。\n（2）粤港澳大湾区有我国以轻工业为主的综合性工业区____，随着粤港澳大湾区“1小时生活圈”基本形成，涌现大批“双城打工人”，说出形成该现象的首要条件是____，港珠澳大桥建设过程中，夏季容易受到____（气象灾害）的影响。\n（3）粤港澳大湾区被誉为“中国第一湾”，从地理位置角度分析粤港澳大湾区发展经济的优势条件。（2分）\n（4）粤港澳大湾区的建设，让港澳地区与祖国内地联系日益紧密，简要说明港澳地区与祖国内地相互支持的表现。（2分）",
+      "options": {},
+      "answer": "",
+      "images": [
+        "question_images/figure_17.png"
+      ]
+    },
+    {
+      "id": "STAGE2025-GEO-038",
+      "number": 38,
+      "type": "综合题",
+      "score": 10,
+      "source_page": 8,
+      "group_prompt": "阅读图文材料，完成下列问题。材料一：2025年12月18日海南已正式启动全岛封关运作，建设成为具有中国特色的世界级自由贸易港，实行最高标准的自由贸易及减免税收政策。材料二：海南未来产业园是承接国际、国内未来产业的重要空间和载体，以服务海南自贸港建设为核心目标，发展全球领先的人工智能、量子计算、新能源等创新型应用产业集群。材料三：图1为海南未来产业园位置及交通示意图，图2为海南岛相关地理事物分布示意图。",
+      "stem": "（1）海南岛地处____带（温度带），降水空间分布特点是____，属于____气候，植被茂密，空气清新，环境优美，对吸引未来产业的“落户”，环境优势十分显著。\n（2）洋浦经济开发区位于海南省____市，被赋予了打造海南自由贸易港建设先行区、示范区的重任。分析建设洋浦港口的优势自然条件：____（写出一点即可）。\n（3）承接国际、国内未来产业，海南省具备的有利社会经济条件是____（写出一点即可）。建设“海南未来产业园”对海南省经济发展的意义有____。（2分）\n（4）海南岛河流众多但航运价值不大，岛内运输不以水运为主，原因是____。（2分）",
+      "options": {},
+      "answer": "",
+      "images": [
+        "question_images/figure_18.png"
+      ]
+    }
+  ]
+}
