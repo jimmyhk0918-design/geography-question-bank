@@ -22,5 +22,11 @@
     "title": "2025-2026学年第二学期阶段性质量评估地理科练习题",
     "url": "./geography_bank/stage_quality_2025/stage_quality_2025_question_bank.json",
     "basePath": "./geography_bank/stage_quality_2025"
+  },
+  {
+    "id": "huaqiao_grade8_1_6_2025",
+    "title": "海南华侨中学美丽沙分校八年级1-6章",
+    "url": "./geography_bank/huaqiao_grade8_1_6_2025/huaqiao_grade8_1_6_2025_question_bank.json",
+    "basePath": "./geography_bank/huaqiao_grade8_1_6_2025"
   }
 ]
