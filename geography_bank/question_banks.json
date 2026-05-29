@@ -28,5 +28,11 @@
     "title": "海南华侨中学美丽沙分校八年级1-6章",
     "url": "./geography_bank/huaqiao_grade8_1_6_2025/huaqiao_grade8_1_6_2025_question_bank.json",
     "basePath": "./geography_bank/huaqiao_grade8_1_6_2025"
+  },
+  {
+    "id": "haikou_2026_mock1",
+    "title": "海口市2026年初中学业水平模拟考试（一）",
+    "url": "./geography_bank/haikou_2026_mock1/haikou_2026_mock1_question_bank.json",
+    "basePath": "./geography_bank/haikou_2026_mock1"
   }
 ]
