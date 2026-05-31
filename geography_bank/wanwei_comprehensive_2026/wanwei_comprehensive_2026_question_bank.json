@@ -1,0 +1,905 @@
+{
+  "source": {
+    "id": "wanwei_comprehensive_2026",
+    "title": "万维地理综合检测卷2026",
+    "subject": "地理",
+    "exam_time_minutes": 60,
+    "full_score": 100,
+    "original_pdf": null,
+    "original_files": [
+      "扫描.jpeg",
+      "扫描 1.jpeg",
+      "扫描 2.jpeg",
+      "扫描 3.jpeg",
+      "扫描 4.jpeg",
+      "扫描 5.jpeg",
+      "答案1.jpg",
+      "答案2.jpeg"
+    ],
+    "notes": "本题库由6页JPEG扫描试卷和2页答案图人工提取，已按答案页录入选择题答案和非选择题参考答案。"
+  },
+  "figures": [
+    {
+      "id": "figure_01",
+      "title": "抚远与喀什位置图及景观图",
+      "source_page": 1,
+      "file": "question_images/figure_01.png",
+      "linked_question_numbers": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "figure_02",
+      "title": "鲁玛乔加船形屋景观图和气候资料图",
+      "source_page": 1,
+      "file": "question_images/figure_02.png",
+      "linked_question_numbers": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "figure_03",
+      "title": "2017-2024年我国人口变化情况",
+      "source_page": 1,
+      "file": "question_images/figure_03.png",
+      "linked_question_numbers": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": "figure_04",
+      "title": "太和门前铜狮子影子照片",
+      "source_page": 2,
+      "file": "question_images/figure_04.png",
+      "linked_question_numbers": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "figure_05",
+      "title": "海南省示意图",
+      "source_page": 2,
+      "file": "question_images/figure_05.png",
+      "linked_question_numbers": [
+        12,
+        13
+      ]
+    },
+    {
+      "id": "figure_06",
+      "title": "北极东北航道与苏伊士运河航道路线图",
+      "source_page": 2,
+      "file": "question_images/figure_06.png",
+      "linked_question_numbers": [
+        14,
+        15
+      ]
+    },
+    {
+      "id": "figure_07",
+      "title": "我国海洋特别保护区分布",
+      "source_page": 3,
+      "file": "question_images/figure_07.png",
+      "linked_question_numbers": [
+        16,
+        17
+      ]
+    },
+    {
+      "id": "figure_08",
+      "title": "黄河流域示意简图",
+      "source_page": 3,
+      "file": "question_images/figure_08.png",
+      "linked_question_numbers": [
+        18,
+        19
+      ]
+    },
+    {
+      "id": "figure_09",
+      "title": "日本主要工业区分布和澳大利亚矿产资源分布",
+      "source_page": 3,
+      "file": "question_images/figure_09.png",
+      "linked_question_numbers": [
+        20,
+        21
+      ]
+    },
+    {
+      "id": "figure_10",
+      "title": "我国与世界人均耕地面积比较及粮食集中产区",
+      "source_page": 4,
+      "file": "question_images/figure_10.png",
+      "linked_question_numbers": [
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "id": "figure_11",
+      "title": "欧洲西部海上风电场分布图",
+      "source_page": 4,
+      "file": "question_images/figure_11.png",
+      "linked_question_numbers": [
+        25,
+        26
+      ]
+    },
+    {
+      "id": "figure_12",
+      "title": "松嫩平原和江汉平原位置示意",
+      "source_page": 4,
+      "file": "question_images/figure_12.png",
+      "linked_question_numbers": [
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "id": "figure_13",
+      "title": "长江经济带",
+      "source_page": 5,
+      "file": "question_images/figure_13.png",
+      "linked_question_numbers": [
+        30,
+        31
+      ]
+    },
+    {
+      "id": "figure_14",
+      "title": "板块运动及马里亚纳海沟位置示意",
+      "source_page": 5,
+      "file": "question_images/figure_14.png",
+      "linked_question_numbers": [
+        32,
+        33
+      ]
+    },
+    {
+      "id": "figure_15",
+      "title": "某大洲局部地区某月等温线分布示意图",
+      "source_page": 5,
+      "file": "question_images/figure_15.png",
+      "linked_question_numbers": [
+        34,
+        35
+      ]
+    },
+    {
+      "id": "figure_16",
+      "title": "哈尔雪山局部地区等高线地形图",
+      "source_page": 5,
+      "file": "question_images/figure_16.png",
+      "linked_question_numbers": [
+        36
+      ]
+    },
+    {
+      "id": "figure_17",
+      "title": "以无人机为支撑的新型低空经济和企业数量排名",
+      "source_page": 6,
+      "file": "question_images/figure_17.png",
+      "linked_question_numbers": [
+        37
+      ]
+    },
+    {
+      "id": "figure_18",
+      "title": "密西西比河航运价值分析框图及流域示意图",
+      "source_page": 6,
+      "file": "question_images/figure_18.png",
+      "linked_question_numbers": [
+        38
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "WWC-2026-GEO-001",
+      "number": 1,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "我国最东端的城市——“东极水乡”抚远日出喧嚣沸腾时，最西端的城市——“西极古城”喀什在夜晚寂静沉睡。读图1“抚远与喀什位置图及景观图”，据此完成1-2题。",
+      "stem": "喀什以西是我国疆域最西端所在的",
+      "options": {
+        "A": "帕米尔高原",
+        "B": "曾母暗沙",
+        "C": "黑龙江",
+        "D": "乌苏里江"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_01.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-002",
+      "number": 2,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "读图1“抚远与喀什位置图及景观图”，据此完成1-2题。",
+      "stem": "抚远日出喧嚣沸腾时，喀什在夜晚寂静沉睡，这是因为我国",
+      "options": {
+        "A": "南北跨纬度广",
+        "B": "海岸线漫长",
+        "C": "东西跨经度广",
+        "D": "边境线漫长"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_01.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-003",
+      "number": 3,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "鲁玛乔加船形屋是苏门答腊岛的传统民居，住宅下层是硬木搭建的支架作为家畜栏，中层是竹木拼接的生活区，上层是一个倒扣的船形屋顶，屋顶上面覆盖棕榈叶等纤维编织而成的草席。读图2“鲁玛乔加船形屋景观图和苏门答腊岛气候资料图”，据此完成3-4题。",
+      "stem": "鲁玛乔加船形屋倒扣的船形屋顶便于",
+      "options": {
+        "A": "通风散热",
+        "B": "快速排水",
+        "C": "降低成本",
+        "D": "就地取材"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_02.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-004",
+      "number": 4,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "读图2“鲁玛乔加船形屋景观图和苏门答腊岛气候资料图”，据此完成3-4题。",
+      "stem": "鲁玛乔加船形屋在结构上最接近我国的",
+      "options": {
+        "A": "云南竹楼",
+        "B": "陕西窑洞",
+        "C": "福建土楼",
+        "D": "西藏碉楼"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_02.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-005",
+      "number": 5,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "读表1“2017-2024年我国人口变化情况”，据此完成5-6题。",
+      "stem": "2017-2024年，我国人口最多的年份是",
+      "options": {
+        "A": "2017年",
+        "B": "2018年",
+        "C": "2021年",
+        "D": "2024年"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_03.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-006",
+      "number": 6,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "读表1“2017-2024年我国人口变化情况”，据此完成5-6题。",
+      "stem": "为缓解我国人口负增长带来的社会问题，应采取的有效措施是",
+      "options": {
+        "A": "调整完善生育政策",
+        "B": "大量接纳外国移民",
+        "C": "鼓励青年晚婚晚育",
+        "D": "发展劳动密集产业"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_03.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-007",
+      "number": 7,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "2025年1月24日，海南首例无人机配送离岛免税品完成，旅客提货时间从6小时缩短至3小时以内，优化了消费者的购物体验，据此完成7-8题。",
+      "stem": "海南首例无人机配送离岛免税品的成功实施，主要得益于",
+      "options": {
+        "A": "市场广阔",
+        "B": "交通便利",
+        "C": "科技先进",
+        "D": "劳动力丰富"
+      },
+      "answer": "C",
+      "images": []
+    },
+    {
+      "id": "WWC-2026-GEO-008",
+      "number": 8,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "海南首例无人机配送离岛免税品完成，据此完成7-8题。",
+      "stem": "海南首例无人机配送离岛免税品完成有利于",
+      "options": {
+        "A": "降低免税品的价格",
+        "B": "提高免税品配送效率",
+        "C": "增加消费者购物成本",
+        "D": "减少消费者购物选择"
+      },
+      "answer": "B",
+      "images": []
+    },
+    {
+      "id": "WWC-2026-GEO-009",
+      "number": 9,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "北京某同学12月初在故宫游玩时拍摄到太和门前铜狮子及其影子照片（如图3），据此完成9-10题。",
+      "stem": "太和门前铜狮子一天内影子长短和方向不同，产生这种现象的原因是",
+      "options": {
+        "A": "地球公转",
+        "B": "地球自转",
+        "C": "地球形状",
+        "D": "地球大小"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_04.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-010",
+      "number": 10,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "据图3“太和门前铜狮子影子照片”，据此完成9-10题。",
+      "stem": "12月初到冬至节气，正午时铜狮子的影子",
+      "options": {
+        "A": "逐渐变短",
+        "B": "一直不变",
+        "C": "逐渐变长",
+        "D": "冬至最短"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_04.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-011",
+      "number": 11,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "据所学秦岭南北区域差异，完成第11题。",
+      "stem": "关于秦岭南北两侧区域地理差异的描述，正确的是",
+      "options": {
+        "A": "山北河流奔腾，山南河冰未解",
+        "B": "山北黄牛下地，山南水牛下田",
+        "C": "山北稻花飘香，山南麦浪滚滚",
+        "D": "山北草木长青，山南树叶凋零"
+      },
+      "answer": "B",
+      "images": []
+    },
+    {
+      "id": "WWC-2026-GEO-012",
+      "number": 12,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "海南因海而生，向海而兴。陵水新村镇地处海南岛南岸，当地利用养殖渔排升级而改造成的民宿，推动渔业“往休闲渔业走”，促进当地经济发展，海南“靠海吃海”有了“新吃法”。读图4“海南省示意图”，据此完成12-13题。",
+      "stem": "新村镇发展休闲渔业主要得益于",
+      "options": {
+        "A": "人才众多，科技力量雄厚",
+        "B": "地形平坦，渔业资源丰富",
+        "C": "地处热带，气候炎热干燥",
+        "D": "濒临南海，渔排规模较大"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_05.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-013",
+      "number": 13,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "读图4“海南省示意图”，据此完成12-13题。",
+      "stem": "海南“靠海吃海”的“新吃法”有",
+      "options": {
+        "A": "开发海洋资源，促进经济发展",
+        "B": "加大养殖力度，增加海产产量",
+        "C": "实施渔民转产，建设度假景区",
+        "D": "完善基础设施，扩大产品出口"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_05.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-014",
+      "number": 14,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "2025年3月，中国货轮“天恩”号满载新能源汽车穿越北冰洋，仅用28天完成上海到鹿特丹的航程，比传统苏伊士运河航道缩短40%。读图5“北极东北航道与苏伊士运河航道路线图”，据此完成14-15题。",
+      "stem": "此次“天恩”号货轮从上海到鹿特丹依次穿过的大洋是",
+      "options": {
+        "A": "太平洋—印度洋—大西洋",
+        "B": "太平洋—大西洋—印度洋",
+        "C": "太平洋—印度洋—北冰洋",
+        "D": "太平洋—北冰洋—大西洋"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_06.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-015",
+      "number": 15,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "读图5“北极东北航道与苏伊士运河航道路线图”，据此完成14-15题。",
+      "stem": "相较于苏伊士运河航道，北极东北航道会",
+      "options": {
+        "A": "缩短中欧空间距离",
+        "B": "严重破坏北极环境",
+        "C": "增加轮船货物运量",
+        "D": "提高货物运输效率"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_06.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-016",
+      "number": 16,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "海洋特别保护区一般设置在海洋生态系统敏感脆弱，但资源密度大、涉海产业多、开发强度高的海域，通过设置海洋特别保护区对这些海域进行有效保护和科学开发。读图6“我国海洋特别保护区分布”，据此完成16-17题。",
+      "stem": "图中我国海洋特别保护区密度最大的海域是",
+      "options": {
+        "A": "渤海",
+        "B": "黄海",
+        "C": "东海",
+        "D": "南海"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_07.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-017",
+      "number": 17,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "读图6“我国海洋特别保护区分布”，据此完成16-17题。",
+      "stem": "海洋特别保护区内的城市发展经济的合理措施有",
+      "options": {
+        "A": "建设工业基地",
+        "B": "加快资源开采",
+        "C": "发展生态旅游",
+        "D": "停止人类活动"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_07.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-018",
+      "number": 18,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "“派出昆仑五色流，一支黄浊贯中州。吹沙走浪几千里，转侧屋间无处求。”是王安石对黄河的描述。读图7“黄河流域示意简图”，据此完成18-19题。",
+      "stem": "“一支黄浊贯中州”主要反映了黄河",
+      "options": {
+        "A": "流速快",
+        "B": "含沙量大",
+        "C": "流量大",
+        "D": "结冰期长"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_08.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-019",
+      "number": 19,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "读图7“黄河流域示意简图”，据此完成18-19题。",
+      "stem": "针对黄河某河段“转侧屋间无处求”，该河段可采取的有效治理措施是",
+      "options": {
+        "A": "加固堤坝",
+        "B": "水土保持",
+        "C": "退耕还林",
+        "D": "合理放牧"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_08.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-020",
+      "number": 20,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "日本工业原料和燃料主要依赖进口，而澳大利亚西部多大型优质露天铁矿，产品大量销往日本。读图8“日本主要工业区分布”“澳大利亚矿产资源分布”，据此完成20-21题。",
+      "stem": "日本和澳大利亚的共同地理特征是",
+      "options": {
+        "A": "都位于板块交界处",
+        "B": "都是四面环海的岛国",
+        "C": "气候类型复杂多样",
+        "D": "工业分布在沿海地区"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_09.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-021",
+      "number": 21,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "读图8“日本主要工业区分布”“澳大利亚矿产资源分布”，据此完成20-21题。",
+      "stem": "与澳大利亚相比，日本工业发展的不利条件是",
+      "options": {
+        "A": "水资源短缺",
+        "B": "矿产资源匮乏",
+        "C": "劳动力不足",
+        "D": "科技力量薄弱"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_09.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-022",
+      "number": 22,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "我国一直坚守耕地保护红线，提出粮食安全是“国之大者”，耕地是粮食生产的命根子。读图9“我国与世界人均耕地面积比较示意图和我国主要粮食作物集中产区分布图”，据此完成22-24题。",
+      "stem": "我国必须“坚守耕地保护红线”的原因是",
+      "options": {
+        "A": "耕地空间分布不均",
+        "B": "耕地类型不齐全",
+        "C": "耕地资源总量充足",
+        "D": "人均耕地面积小"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_10.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-023",
+      "number": 23,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "读图9“我国与世界人均耕地面积比较示意图和我国主要粮食作物集中产区分布图”，据此完成22-24题。",
+      "stem": "我国小麦集中产区与水稻集中产区的共同优势自然条件有",
+      "options": {
+        "A": "热量充足",
+        "B": "雨热同期",
+        "C": "降水丰沛",
+        "D": "平原广阔"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_10.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-024",
+      "number": 24,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "读图9“我国与世界人均耕地面积比较示意图和我国主要粮食作物集中产区分布图”，据此完成22-24题。",
+      "stem": "结合我国耕地资源现状，保障我国粮食安全的正确做法有：①少用农药，降低耕地污染；②开垦草地，增加耕地面积；③加强监管，禁止土地流转；④合理规划，避免乱占耕地。",
+      "options": {
+        "A": "①②",
+        "B": "②③",
+        "C": "③④",
+        "D": "①④"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_10.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-025",
+      "number": 25,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "欧洲西部作为世界领先的风力发电地区之一，海上风电是其发展风电的重要领域。读图10“欧洲西部海上风电场分布图”，据此完成25-26题。",
+      "stem": "欧洲西部沿海国家建设海上风电场的优势有：①设施完善，技术发达；②劳动力丰富且成本低；③濒临海洋，位置优越；④海域广阔，风力强劲。",
+      "options": {
+        "A": "①②③",
+        "B": "①②④",
+        "C": "①③④",
+        "D": "②③④"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_11.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-026",
+      "number": 26,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "读图10“欧洲西部海上风电场分布图”，据此完成25-26题。",
+      "stem": "欧洲西部沿海国家大力推广海上风电产业主要是为了",
+      "options": {
+        "A": "淘汰传统能源",
+        "B": "保护生态环境",
+        "C": "降低用电成本",
+        "D": "增加居民收入"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_11.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-027",
+      "number": 27,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "松嫩平原和江汉平原都是我国著名的商品粮产地，两地农作物成熟期有明显差异，松嫩平原的农作物处于生长期时，江汉平原大部分早熟作物已进入成熟、收割阶段。读图11“松嫩平原和江汉平原位置示意”，据此完成27-29题。",
+      "stem": "松嫩平原和江汉平原两地的农作物熟制分别是",
+      "options": {
+        "A": "一年两熟、两年三熟",
+        "B": "一年一熟、一年两熟至三熟",
+        "C": "一年两熟、一年一熟",
+        "D": "一年三熟、两年三熟"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_12.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-028",
+      "number": 28,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "读图11“松嫩平原和江汉平原位置示意”，据此完成27-29题。",
+      "stem": "影响松嫩平原和江汉平原农作物成熟期差异的主要因素是",
+      "options": {
+        "A": "地形地势",
+        "B": "土壤类型",
+        "C": "纬度位置",
+        "D": "海陆位置"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_12.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-029",
+      "number": 29,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "读图11“松嫩平原和江汉平原位置示意”，据此完成27-29题。",
+      "stem": "如果要在松嫩平原推广江汉平原的农作物，首先要",
+      "options": {
+        "A": "改良土壤肥力",
+        "B": "培育耐寒品种",
+        "C": "引入灌溉水源",
+        "D": "改变耕作方式"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_12.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-030",
+      "number": 30,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "长江是中华民族的生命河，也是中华民族发展的重要支撑。长江经济带发展战略定位必须坚持生态优先、绿色发展，共抓大保护、不搞大开发。读图12“长江经济带”，据此完成30-31题。",
+      "stem": "长江是长江经济带的纽带体现在",
+      "options": {
+        "A": "“黄金水道”的航运价值",
+        "B": "“鱼米之乡”的旅游价值",
+        "C": "“水能宝库”的灌溉价值",
+        "D": "“塞上江南”的农业价值"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_13.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-031",
+      "number": 31,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "读图12“长江经济带”，据此完成30-31题。",
+      "stem": "实现“生态优先、绿色发展”，长江经济带应做到",
+      "options": {
+        "A": "大力发展旅游业",
+        "B": "工业污水直接排",
+        "C": "增加流域耕地量",
+        "D": "发展与保护同行"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_13.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-032",
+      "number": 32,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "马里亚纳海沟是世界上最深的海沟，位于菲律宾东部海域。在地质形成原因上符合板块构造学说。读图13“板块运动及马里亚纳海沟位置示意”，据此完成32-33题。",
+      "stem": "马里亚纳海沟地处两大板块交界地带，这两大板块是",
+      "options": {
+        "A": "亚欧板块、美洲板块",
+        "B": "太平洋板块、印度洋板块",
+        "C": "亚欧板块、非洲板块",
+        "D": "太平洋板块、亚欧板块"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_14.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-033",
+      "number": 33,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "读图13“板块运动及马里亚纳海沟位置示意”，据此完成32-33题。",
+      "stem": "马里亚纳海沟所处板块的运动方向是",
+      "options": {
+        "A": "→ →",
+        "B": "→ ←",
+        "C": "← ←",
+        "D": "← →"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_14.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-034",
+      "number": 34,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "某地理兴趣小组探究气温的影响因素，搜集到世界某大洲局部地区某月等温线分布示意图（图14），据此完成34-35题。",
+      "stem": "据图分析，该地区此时处于",
+      "options": {
+        "A": "春季",
+        "B": "夏季",
+        "C": "秋季",
+        "D": "冬季"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_15.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-035",
+      "number": 35,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "读图14“世界某大洲局部地区某月等温线分布示意图”，据此完成34-35题。",
+      "stem": "影响甲、乙两地气温产生差异的主导因素是",
+      "options": {
+        "A": "地形地势",
+        "B": "人类活动",
+        "C": "纬度位置",
+        "D": "海陆位置"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_15.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-036",
+      "number": 36,
+      "type": "non_choice",
+      "score": 10,
+      "source_page": 5,
+      "group_prompt": "读图文材料，完成下列各题。材料一：哈尔雪山交通便利，景色优美，较长的适宜攀登时段和较为完善和成熟的登山服务使其成为众多登山爱好者首选的入门级攀登雪山。材料二：图15为哈尔雪山局部地区等高线地形图。",
+      "stem": "（1）兰花坪雪山露营地所处的地形部位是____，登山爱好者从黑海湖露营地攀登至哈尔雪山山顶气温大致下降____，为保证顺利登上雪山，登山爱好者需携带的物品有____。\n（2）用箭头在图中甲河流上标注河流的流向。\n（3）图中登山路线的大致走向为____，选择该路线的原因是____。（2分）\n（4）分析哈尔雪山成为众多登山爱好者首选的入门级攀登雪山的原因。（3分）",
+      "options": {},
+      "answer": "（1）山谷；6.6℃～7.8℃；护目镜、氧气罐、羽绒服、保暖手套、登山杖、便携高热量食物等（任答一点）。\n（2）图略。提示：河流从高处流向低处。\n（3）从东北向西南再向东南。等高线相对稀疏，坡度较缓，攀登难度相对较小；沿山谷或较为平缓的地形行进，便于行走和登山服务的开展；经过较多营地，便于补给和休息。（任答两点）\n（4）交通便利，景色优美；适宜攀登的时段较长，可供登山的时间多；有较为完善和成熟的登山服务，能保障登山者的安全，提供便利，降低登山难度和风险。（任答三点）",
+      "images": [
+        "question_images/figure_16.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-037",
+      "number": 37,
+      "type": "non_choice",
+      "score": 10,
+      "source_page": 6,
+      "group_prompt": "读图文材料，完成下列各题。材料一：低空经济是指垂直高度1000米以下（最高不超过3000米）的低空空域范围内，以民用有人驾驶和无人驾驶航空器为载体，通过载人、载货及其他作业等多场景的低空飞行活动。该产业链条长、辐射面广，可应用于我国多个领域。“低空经济”自首次写入《政府工作报告》后，全国各地对低空经济产业布局的热情持续高涨。据统计，我国已有20多个省份已开始布局低空经济，希望依托新技术拓展新市场。材料二：图16为以无人机为支撑的新型低空经济简图，图17为全国低空经济企业数量排名示意图。",
+      "stem": "（1）我国低空经济企业数量最多的省级行政区是____。低空经济产业因具有链条长、辐射面广等特点，可广泛应用到____等领域。（2分）\n（2）简述我国推进低空经济的积极影响。（4分）\n（3）低空经济中的无人机还可用于农业生产，试列举三项无人机在农业生产中的具体应用。（3分）",
+      "options": {},
+      "answer": "（1）广东省；客运、物流、旅游观光等（任答两点）。\n（2）带动相关产业发展，如航空制造业、电子设备制造业等；促进产业升级，增加经济收入；提供更多就业岗位，涵盖研发、生产、运营等多个环节；推动航空技术、通信技术等相关技术的创新和发展。\n（3）无人机播种与施肥、农药喷洒；农作物生长监测；农田病虫害监测等。（任答三点）",
+      "images": [
+        "question_images/figure_17.png"
+      ]
+    },
+    {
+      "id": "WWC-2026-GEO-038",
+      "number": 38,
+      "type": "non_choice",
+      "score": 10,
+      "source_page": 6,
+      "group_prompt": "读图文材料，完成下列各题。材料一：密西西比河是美国最长的河流，被美国人称为“母亲河”，其支流众多，流域面积广阔。作为美国南北运输的“大动脉”，密西西比河的内河航运对美国运输业乃至经济整体都至关重要。材料二：近年来，密西西比河面临连续干旱，致使河流水位显著降低，大量驳船搁浅，货物运输受阻，部分货物出口量比过去三年的平均水平大幅降低。材料三：图18为密西西比河流域示意。",
+      "stem": "（1）密西西比河发源于阿巴拉契亚山脉和____山脉，流向大致为____，流经中部平原后最终注入____洋。\n（2）分析密西西比河航运价值高的原因，并将框图补充完整。自然原因：流经中部平原→水流平缓；降水较①____→河流径流量大。社会原因：人口密集、经济发达→货物运输量②____→航运价值高。\n（3）密西西比河水位下降可能产生的影响是____。同学们就航运能力对经济发展的有利影响进行讨论，将对话内容补充完整：同意拓宽河道提高河流航运价值的理由是____；不同意拓宽河道的理由是____。",
+      "options": {},
+      "answer": "（1）落基；自北向南；大西。\n（2）①多；②大。\n（3）运费上升；影响进出口货物物价；影响进出口方经济收入出现波动等（任答一点）。同意理由：完善交通网络，促进区域经济发展；增加就业岗位，提高当地民众收入。不同意理由：污染水质，破坏生态环境；拓宽河道所需资金较多，造成经济负担。",
+      "images": [
+        "question_images/figure_18.png"
+      ]
+    }
+  ]
+}
