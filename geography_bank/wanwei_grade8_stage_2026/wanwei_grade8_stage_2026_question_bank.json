@@ -1,0 +1,892 @@
+{
+  "source": {
+    "id": "wanwei_grade8_stage_2026",
+    "title": "万维地理八年级阶段检测卷2026",
+    "subject": "地理",
+    "exam_time_minutes": 60,
+    "full_score": 100,
+    "original_pdf": null,
+    "original_files": [
+      "扫描.jpeg",
+      "扫描 1.jpeg",
+      "扫描 2.jpeg",
+      "扫描 3.jpeg",
+      "扫描 4.jpeg",
+      "扫描 5.jpeg",
+      "答案1.jpg",
+      "答案2.jpeg"
+    ],
+    "notes": "本题库由6页JPEG扫描试卷和2页答案图人工提取，已按答案页录入选择题答案和非选择题参考答案。"
+  },
+  "figures": [
+    {
+      "id": "figure_01",
+      "title": "我国三大海洋经济分布",
+      "source_page": 1,
+      "file": "question_images/figure_01.png",
+      "linked_question_numbers": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "figure_02",
+      "title": "2018-2027年中国养老产业市场规模及预测",
+      "source_page": 1,
+      "file": "question_images/figure_02.png",
+      "linked_question_numbers": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "figure_03",
+      "title": "318国道示意图和横断山区之字形公路景观图",
+      "source_page": 1,
+      "file": "question_images/figure_03.png",
+      "linked_question_numbers": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "id": "figure_04",
+      "title": "淮河干流示意图",
+      "source_page": 2,
+      "file": "question_images/figure_04.png",
+      "linked_question_numbers": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": "figure_05",
+      "title": "中国地热资源分布示意图",
+      "source_page": 2,
+      "file": "question_images/figure_05.png",
+      "linked_question_numbers": [
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "id": "figure_06",
+      "title": "中国盐碱地和海水稻推广试点分布图",
+      "source_page": 2,
+      "file": "question_images/figure_06.png",
+      "linked_question_numbers": [
+        15,
+        16
+      ]
+    },
+    {
+      "id": "figure_07",
+      "title": "科技机器人跳舞场景照片",
+      "source_page": 3,
+      "file": "question_images/figure_07.png",
+      "linked_question_numbers": [
+        17,
+        18
+      ]
+    },
+    {
+      "id": "figure_08",
+      "title": "橘和枳示意图",
+      "source_page": 3,
+      "file": "question_images/figure_08.png",
+      "linked_question_numbers": [
+        19,
+        20
+      ]
+    },
+    {
+      "id": "figure_09",
+      "title": "三北防护林工程示意图",
+      "source_page": 3,
+      "file": "question_images/figure_09.png",
+      "linked_question_numbers": [
+        21,
+        22
+      ]
+    },
+    {
+      "id": "figure_10",
+      "title": "青藏地区碉房和帐房分布及景观示意图",
+      "source_page": 3,
+      "file": "question_images/figure_10.png",
+      "linked_question_numbers": [
+        23,
+        24,
+        25
+      ]
+    },
+    {
+      "id": "figure_11",
+      "title": "沈阳现代化都市圈范围",
+      "source_page": 4,
+      "file": "question_images/figure_11.png",
+      "linked_question_numbers": [
+        28,
+        29,
+        30
+      ]
+    },
+    {
+      "id": "figure_12",
+      "title": "台湾省、贵州省地形示意和茶树资料卡",
+      "source_page": 4,
+      "file": "question_images/figure_12.png",
+      "linked_question_numbers": [
+        31,
+        32
+      ]
+    },
+    {
+      "id": "figure_13",
+      "title": "黄土高原地表水土流失的过程",
+      "source_page": 5,
+      "file": "question_images/figure_13.png",
+      "linked_question_numbers": [
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "id": "figure_14",
+      "title": "岑参出塞线路",
+      "source_page": 5,
+      "file": "question_images/figure_14.png",
+      "linked_question_numbers": [
+        36
+      ]
+    },
+    {
+      "id": "figure_15",
+      "title": "中国四大地理区域及各地区农作物习性",
+      "source_page": 6,
+      "file": "question_images/figure_15.png",
+      "linked_question_numbers": [
+        37
+      ]
+    },
+    {
+      "id": "figure_16",
+      "title": "粤港澳大湾区与海南自由贸易港示意图",
+      "source_page": 6,
+      "file": "question_images/figure_16.png",
+      "linked_question_numbers": [
+        38
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "WWG8-2026-GEO-001",
+      "number": 1,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "为进一步加强海洋强国建设，我国划分三大海洋经济圈，北部海洋经济圈突出科研实力，东部海洋经济圈作为经济贸易中心闻名，南部海洋经济圈以丰富的生物与淡水资源见长，各有特长。读图1“我国三大海洋经济分布”，据此完成1-3题。",
+      "stem": "北部海洋经济圈主要濒临的内海是",
+      "options": {
+        "A": "渤海",
+        "B": "黄海",
+        "C": "东海",
+        "D": "南海"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_01.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-002",
+      "number": 2,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "读图1“我国三大海洋经济分布”，据此完成1-3题。",
+      "stem": "南部海洋经济圈主要包括的省级行政单位有",
+      "options": {
+        "A": "粤、闽、琼",
+        "B": "苏、浙、沪",
+        "C": "闽、苏、沪",
+        "D": "苏、浙、皖"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_01.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-003",
+      "number": 3,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "读图1“我国三大海洋经济分布”，据此完成1-3题。",
+      "stem": "我国设立不同特点的三大海洋经济圈的意义是",
+      "options": {
+        "A": "可分工无限开采海洋资源",
+        "B": "放大各自的优势共促发展",
+        "C": "减少彼此之间的经济来往",
+        "D": "完全开发我国漫长的海岸线"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_01.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-004",
+      "number": 4,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "2025年全国民政工作会议提出，要发展“银发经济”，培育养老服务经营主体，加强失能老年人照护服务，推动发展互助式养老服务。读图2“2018-2027年中国养老产业市场规模及预测”，据此完成4-6题。",
+      "stem": "“银发经济”反映出目前我国人口面临的主要问题是",
+      "options": {
+        "A": "人口老龄化",
+        "B": "人口素质低",
+        "C": "出生率偏高",
+        "D": "劳动力过剩"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_02.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-005",
+      "number": 5,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "读图2“2018-2027年中国养老产业市场规模及预测”，据此完成4-6题。",
+      "stem": "由图可知，中国养老产业市场",
+      "options": {
+        "A": "2020-2027年增长率持续上升",
+        "B": "2018-2027年经济规模不断扩大",
+        "C": "2020-2027年增长率持续下降",
+        "D": "2018-2027年经济规模保持不变"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_02.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-006",
+      "number": 6,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "读图2“2018-2027年中国养老产业市场规模及预测”，据此完成4-6题。",
+      "stem": "银发经济是指专为老年人提供产品和服务的经济活动，其带动的产业有",
+      "options": {
+        "A": "房地产开发建设",
+        "B": "电子游戏研发",
+        "C": "野外探险旅游",
+        "D": "医疗保健服务"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_02.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-007",
+      "number": 7,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "318国道因囊括多种地貌景观，包含多种文化而被中国国家地理杂志评为“中国人的景观大道”。某驴友从南昌出发，沿318国道骑行至拉萨。读图3“318国道示意图”和“横断山区‘之’字形公路景观图”，据此完成7-9题。",
+      "stem": "318国道穿过了我国的",
+      "options": {
+        "A": "黄土高原",
+        "B": "西北地区",
+        "C": "武夷山脉",
+        "D": "地势三级阶梯"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_03.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-008",
+      "number": 8,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "读图3“318国道示意图”和“横断山区‘之’字形公路景观图”，据此完成7-9题。",
+      "stem": "318国道沿线可体验的特色文化是：①齐鲁文化；②天府文化；③藏族文化；④岭南文化。",
+      "options": {
+        "A": "①②",
+        "B": "②③",
+        "C": "②④",
+        "D": "③④"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_03.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-009",
+      "number": 9,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "读图3“318国道示意图”和“横断山区‘之’字形公路景观图”，据此完成7-9题。",
+      "stem": "途经横断山区时，公路多呈“之”字形的主要原因是",
+      "options": {
+        "A": "连接更多城市",
+        "B": "缩短道路里程",
+        "C": "减缓公路坡度",
+        "D": "节约建设成本"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_03.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-010",
+      "number": 10,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "淮河流域地处中国南北气候过渡带，流域内洪涝灾害易发。为了减少洪涝灾害的发生，淮河流域通过修建水库、堤防、行洪区（宣泄洪水）和蓄洪区（贮存洪水），形成了防洪减灾工程体系，但下游洪水泄洪仍不通畅。读图4“淮河干流示意图”，据此完成10-11题。",
+      "stem": "蓄洪区主要分布在淮河",
+      "options": {
+        "A": "上游河段",
+        "B": "中游河段",
+        "C": "下游河段",
+        "D": "流域全段"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_04.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-011",
+      "number": 11,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "读图4“淮河干流示意图”，据此完成10-11题。",
+      "stem": "淮河下游洪水泄洪仍不通畅的原因可能是",
+      "options": {
+        "A": "距海较远",
+        "B": "河道曲折",
+        "C": "地势平缓",
+        "D": "结冰期长"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_04.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-012",
+      "number": 12,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "我国地热资源非常丰富。读图5“中国地热资源分布示意”，据此完成12-14题。",
+      "stem": "我国大型地热田最多的省级行政区是",
+      "options": {
+        "A": "河北省",
+        "B": "西藏自治区",
+        "C": "广东省",
+        "D": "云南省"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_05.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-013",
+      "number": 13,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "读图5“中国地热资源分布示意”，据此完成12-14题。",
+      "stem": "地热田多的地区，地热资源丰富的主要原因是",
+      "options": {
+        "A": "板块交界，地壳活跃",
+        "B": "纬度较低，气候炎热",
+        "C": "四面临海，海沟深邃",
+        "D": "山脉纵横，植被茂密"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_05.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-014",
+      "number": 14,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "读图5“中国地热资源分布示意”，据此完成12-14题。",
+      "stem": "我国开发地热资源的意义有：①优化能源结构，保障能源安全；②改变区域能源结构；③清洁可再生能源，减少碳排放；④减少地质灾害发生。",
+      "options": {
+        "A": "①②",
+        "B": "①③",
+        "C": "②④",
+        "D": "③④"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_05.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-015",
+      "number": 15,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "“海水稻”是指能在普通水稻无法存活的盐碱地中生长的水稻，我国通过育种技术创新，培育出耐盐碱水稻品种。读图6“中国盐碱地和‘海水稻’推广试点分布图”，据此完成15-16题。",
+      "stem": "影响我国“海水稻”推广试点选址的主要因素是",
+      "options": {
+        "A": "海陆位置",
+        "B": "年降水量",
+        "C": "光照时长",
+        "D": "盐碱地分布"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_06.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-016",
+      "number": 16,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "读图6“中国盐碱地和‘海水稻’推广试点分布图”，据此完成15-16题。",
+      "stem": "新疆在推广“海水稻”种植时，最具挑战的技术难题是",
+      "options": {
+        "A": "精准灌溉技术",
+        "B": "增补光照技术",
+        "C": "病虫害防治技术",
+        "D": "土壤翻耕技术"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_06.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-017",
+      "number": 17,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "2025年春晚舞台上，来自杭州市的科技机器人与16名舞蹈演员表演创意融合舞蹈《秧BOT》，让我们看到了科技与艺术的完美结合。读图7“科技机器人跳舞场景照片”，据此完成17-18题。",
+      "stem": "杭州市机器人产业的快速发展，得益于我国高度重视",
+      "options": {
+        "A": "传统制造业",
+        "B": "高技术产业",
+        "C": "文化传媒产业",
+        "D": "现代设施农业"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_07.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-018",
+      "number": 18,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "读图7“科技机器人跳舞场景照片”，据此完成17-18题。",
+      "stem": "我国机器人产业快速发展可以：①推动产业优化升级；②取代所有就业岗位；③促进科技水平提升；④降低生产作业效率。",
+      "options": {
+        "A": "①②",
+        "B": "①③",
+        "C": "②③",
+        "D": "③④"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_07.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-019",
+      "number": 19,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "“橘生淮南则为橘，生于淮北则为枳，叶徒相似，其实味不同。”出自《晏子春秋》，体现了古人对于自然环境及其对事物影响的认知。读图8“橘”和“枳”示意图，据此完成19-20题。",
+      "stem": "材料中“淮南”和“淮北”中的“淮”与下列地理意义一致的是",
+      "options": {
+        "A": "季风区与非季风区的分界线",
+        "B": "400毫米年等降水量线",
+        "C": "南方地区与北方地区的分界线",
+        "D": "内流区与外流区分界线"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_08.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-020",
+      "number": 20,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "读图8“橘”和“枳”示意图，据此完成19-20题。",
+      "stem": "文中“叶徒相似，其实味不同”现象的主要影响因素为",
+      "options": {
+        "A": "地形",
+        "B": "气候",
+        "C": "土壤",
+        "D": "日照"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_08.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-021",
+      "number": 21,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "从塞罕坝的绿色奇迹，到八步沙的铸绿传奇，“三北”防护林工程实施40多年来，区内森林覆盖率从5.05%提高到13.84%。读图9“‘三北’防护林工程示意图”，据此完成21-22题。",
+      "stem": "“三北”防护林工程大部分位于我国",
+      "options": {
+        "A": "北方地区",
+        "B": "南方地区",
+        "C": "西北地区",
+        "D": "青藏地区"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_09.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-022",
+      "number": 22,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "读图9“‘三北’防护林工程示意图”，据此完成21-22题。",
+      "stem": "“三北”防护林工程最重要的生态价值是",
+      "options": {
+        "A": "保护珍稀动物",
+        "B": "提供就业机会",
+        "C": "增加木材资源",
+        "D": "抵御风沙入侵"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_09.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-023",
+      "number": 23,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "碉房和帐房是青藏高原地区两种常见的民居。碉房多为石木结构，具有坚实稳固的特点。帐房内部以帐架支顶，外部以牦牛毡为覆盖材料。读图10“青藏地区碉房和帐房分布及景观示意图”，据此完成23-25题。",
+      "stem": "碉房分布地区的主要特色农业是",
+      "options": {
+        "A": "温室农业",
+        "B": "河谷农业",
+        "C": "灌溉农业",
+        "D": "节水农业"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_10.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-024",
+      "number": 24,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "读图10“青藏地区碉房和帐房分布及景观示意图”，据此完成23-25题。",
+      "stem": "与碉房相比，帐房的优越性主要体现在",
+      "options": {
+        "A": "防寒保暖",
+        "B": "就地取材",
+        "C": "拆卸灵活",
+        "D": "防风防沙"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_10.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-025",
+      "number": 25,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "读图10“青藏地区碉房和帐房分布及景观示意图”，据此完成23-25题。",
+      "stem": "碉房和帐房所在地区农业类型不同，其主要影响因素是",
+      "options": {
+        "A": "光照",
+        "B": "纬度",
+        "C": "水源",
+        "D": "热量"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_10.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-026",
+      "number": 26,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "第27届中国北京国际科技产业博览会于2025年5月8日至11日在北京国家会议中心举办，展会以“科技引领 创享未来”为主题，设置六个专题展区，据此完成26-27题。",
+      "stem": "北京国际科技产业博览会的举办，体现北京的首都职能是：①文化中心；②国际交往中心；③政治中心；④科技创新中心。",
+      "options": {
+        "A": "①③",
+        "B": "①④",
+        "C": "②③",
+        "D": "②④"
+      },
+      "answer": "D",
+      "images": []
+    },
+    {
+      "id": "WWG8-2026-GEO-027",
+      "number": 27,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "第27届中国北京国际科技产业博览会于2025年5月8日至11日在北京国家会议中心举办，据此完成26-27题。",
+      "stem": "这届北京国际科技产业博览会设置的六个专题展区可能包括：①信息科技；②智能制造；③文物遗产；④钢铁生产。",
+      "options": {
+        "A": "①②",
+        "B": "①③",
+        "C": "②③",
+        "D": "③④"
+      },
+      "answer": "A",
+      "images": []
+    },
+    {
+      "id": "WWG8-2026-GEO-028",
+      "number": 28,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "沈阳作为东北地区的中心城市，其经济实力和工业基础一直稳居东北前列。沈阳都市圈是东北地区第一个国家级都市圈，沈阳入选2024年“5G+工业互联网”融合应用试点城市名单，在加快重点园区数字化转型升级的同时也带动和辐射东北地区的创新发展。读图11“沈阳现代化都市圈范围”，据此完成28-30题。",
+      "stem": "沈阳现代化都市圈成为东北第一个国家级都市圈主要得益于",
+      "options": {
+        "A": "港口城市，经济较发达",
+        "B": "交通枢纽，辐射范围广",
+        "C": "人口众多，劳动力廉价",
+        "D": "位置优越，进出口便利"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_11.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-029",
+      "number": 29,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "读图11“沈阳现代化都市圈范围”，据此完成28-30题。",
+      "stem": "沈阳市入选2024年“5G+工业互联网”融合应用试点城市的核心支撑是",
+      "options": {
+        "A": "自然资源",
+        "B": "人力资源",
+        "C": "工业基础",
+        "D": "市场潜力"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_11.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-030",
+      "number": 30,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "读图11“沈阳现代化都市圈范围”，据此完成28-30题。",
+      "stem": "为提升辐射带动东北地区创新发展能力，沈阳应进一步：①完善交通和网络建设；②支持高新技术产业向周边转移；③提高传统工业的占比；④吸引人才并提升科技创新能力。",
+      "options": {
+        "A": "①②",
+        "B": "①③",
+        "C": "①④",
+        "D": "②④"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_11.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-031",
+      "number": 31,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "2024年12月4日，黔台产业合作交流座谈会在贵阳召开。台商台企希望以茶会友，加强与贵州省茶企的合作，共同促进茶产业发展。读图12“台湾省地形示意”“贵州省地形示意”和“茶树资料卡”，据此完成31-32题。",
+      "stem": "台湾、贵州两省均可种植茶树的共同原因是",
+      "options": {
+        "A": "科技发达，机械化水平高",
+        "B": "降水丰富，热量充足",
+        "C": "地形平坦，可规模化种植",
+        "D": "黑土深厚，土壤肥沃"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_12.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-032",
+      "number": 32,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "读图12“台湾省地形示意”“贵州省地形示意”和“茶树资料卡”，据此完成31-32题。",
+      "stem": "台商台企与贵州省茶企的合作有利于：①促进技术交流，推动茶产业升级；②推进交通建设，完善高铁网络；③优化整合资源，提高资源利用率；④搭建沟通平台，增加文化互动。",
+      "options": {
+        "A": "①②③",
+        "B": "①②④",
+        "C": "①③④",
+        "D": "②③④"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_12.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-033",
+      "number": 33,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "黄土高原是世界上面积最大的黄土堆积区，也是世界上水土流失最为严重的区域之一。读图13“黄土高原地表水土流失的过程”，据此完成33-35题。",
+      "stem": "图示雨水侵蚀黄土高原地表的先后顺序一般为",
+      "options": {
+        "A": "①②③④",
+        "B": "②①③④",
+        "C": "①②④③",
+        "D": "②①④③"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_13.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-034",
+      "number": 34,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "读图13“黄土高原地表水土流失的过程”，据此完成33-35题。",
+      "stem": "黄土高原水土流失严重的原因有：①土质疏松；②全年多暴雨；③植被稀疏；④地势低洼。",
+      "options": {
+        "A": "①②",
+        "B": "①③",
+        "C": "②④",
+        "D": "③④"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_13.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-035",
+      "number": 35,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "读图13“黄土高原地表水土流失的过程”，据此完成33-35题。",
+      "stem": "为减轻黄土高原的水土流失，下列治理措施合理的是",
+      "options": {
+        "A": "沟谷—打坝淤地",
+        "B": "陡坡—修筑梯田",
+        "C": "缓坡—平整土地",
+        "D": "塬面—封山育林"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_13.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-036",
+      "number": 36,
+      "type": "non_choice",
+      "score": 10,
+      "source_page": 5,
+      "group_prompt": "读图文材料，完成下列各题。材料一：唐代诗人岑参曾两次出塞，对边塞风光、军旅生活以及少数民族的文化风俗有切实的感受，留下了如“北风卷地白草折，胡天八月即飞雪。”等诸多描绘西北地区景象的诗句。材料二：图14“岑参出塞线路”。",
+      "stem": "（1）岑参出塞时经过陕西省、____省和____，途中在酒泉所作诗词《过酒泉忆杜陵别业》中的“黄沙西际海，白草北连天。”描写了当地____的自然环境特征。\n（2）岑参在《白雪歌送武判官归京》中写道：“北风卷地白草折，胡天八月即飞雪。”描述了该地区秋季多大风、____的自然景象。“胡（塞北）天八月即飞雪”是因为该地纬度较____，气温下降较快；多山地地形，海拔高，气温低；受温带大陆性气候影响，且距____季风源地近，使得当地在农历八月时就出现降雪天气。\n（3）请从岑参诗句中描绘的西北地区自然景象角度，简述古代边塞地区自然环境对当时人们生产生活的影响。（4分）",
+      "options": {},
+      "answer": "（1）甘肃；新疆维吾尔自治区；干旱。\n（2）降雪早；高；冬。\n（3）生产方面：干旱缺水，农业产量低；畜牧业成为核心生产活动。生活方面：需应对大风、严寒等恶劣天气，物资匮乏，生活水平较低；交通出行多为马、骆驼。",
+      "images": [
+        "question_images/figure_14.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-037",
+      "number": 37,
+      "type": "non_choice",
+      "score": 10,
+      "source_page": 6,
+      "group_prompt": "读图文材料，完成下列各题。材料一：中国颜色，传承千载，每一种颜色都有独特的韵味。某地理研学小组分别从中国四大地理区域选取了稻谷黄、高粱红、棉花白、青稞黑四种颜色，来探究我国区域地理差异与农业发展之间的关系。材料二：图15示意中国四大地理区域图以及各地区农作物习性。",
+      "stem": "（1）“稻谷黄”常代表着我国____（选填四大地理区域）的丰收盛景，该地区以____（选填耕地类型）为主。“高粱红”多见于我国北方地区，影响高粱和稻谷分布的主要因素是____（填“气候”或“地形”）。\n（2）“青稞黑”生长于青藏地区的____地带，“棉花白”主要分布在塔里木盆地边缘的____地带，两地适宜农作物生长的共同优势气候条件是____（2分）。\n（3）高粱和棉花对环境的适应性均较强，两者共同的习性有____。分析我国北方地区适宜高粱生长的原因。（2分）",
+      "options": {},
+      "answer": "（1）南方地区；水田；气候。\n（2）河谷；绿洲；光照充足、昼夜温差大。\n（3）喜光。北方地区多属于温带季风气候，季风气候不稳定，容易发生旱涝灾害；高粱具有较好的抗旱、耐涝性，适宜种植在北方地区；北方地区降水相对较少，夏季气温高，日照时间较长，符合高粱喜温、喜光的特点；北方地区有盐碱地分布，高粱具有耐盐碱的特点，适宜种植在北方地区。（任答两点）",
+      "images": [
+        "question_images/figure_15.png"
+      ]
+    },
+    {
+      "id": "WWG8-2026-GEO-038",
+      "number": 38,
+      "type": "non_choice",
+      "score": 10,
+      "source_page": 6,
+      "group_prompt": "读图文材料，完成下列各题。材料一：海南省与广东省隔海相望。海南自由贸易港重点发展旅游、互联网、医疗健康、金融、会展等现代服务业，加快服务贸易创新发展。随着海峡一体化发展的持续推进，粤港澳大湾区与海南自贸港“双向奔赴”，协同发展。材料二：图16为粤港澳大湾区与海南自由贸易港示意图。",
+      "stem": "（1）海南省和广东省都濒临____海，海南自由贸易港是往来____洋和太平洋的海上要冲，也是连接东亚和东南亚的区域中心。\n（2）粤港澳大湾区经济发达、人口众多，可为海南自贸港建设提供广阔的____。\n（3）由材料可知，海南自由贸易港产业结构以____（服务/工业）型经济为主，涉及旅游、互联网、金融等产业，此处发展旅游业的优势条件有____（2分）。\n（4）请为促进粤港澳大湾区与海南自贸港相向而行提出建议。（4分）",
+      "options": {},
+      "answer": "（1）南；印度。\n（2）消费市场。\n（3）服务；环境优美，气候适宜；旅游资源丰富独特；地理位置重要，国际市场广阔；政府政策支持。（任答两点）\n（4）促进产业协同发展，构建优势互补的产业体系；完善交通等基础设施建设；积极促进人才交流与合作；加强政策支持与资金投入。",
+      "images": [
+        "question_images/figure_16.png"
+      ]
+    }
+  ]
+}

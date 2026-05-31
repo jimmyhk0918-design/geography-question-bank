@@ -40,5 +40,11 @@
     "title": "万维地理七年级阶段检测卷2026",
     "url": "./geography_bank/wanwei_grade7_stage_2026/wanwei_grade7_stage_2026_question_bank.json",
     "basePath": "./geography_bank/wanwei_grade7_stage_2026"
+  },
+  {
+    "id": "wanwei_grade8_stage_2026",
+    "title": "万维地理八年级阶段检测卷2026",
+    "url": "./geography_bank/wanwei_grade8_stage_2026/wanwei_grade8_stage_2026_question_bank.json",
+    "basePath": "./geography_bank/wanwei_grade8_stage_2026"
   }
 ]
