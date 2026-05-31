@@ -1,0 +1,922 @@
+{
+  "source": {
+    "id": "wanwei_grade7_stage_2026",
+    "title": "万维地理七年级阶段检测卷2026",
+    "subject": "地理",
+    "exam_time_minutes": 60,
+    "full_score": 100,
+    "original_pdf": null,
+    "original_files": [
+      "扫描.jpeg",
+      "扫描 1.jpeg",
+      "扫描 2.jpeg",
+      "扫描 3.jpeg",
+      "扫描 4.jpeg",
+      "扫描 5.jpeg",
+      "答案1.jpg",
+      "答案2.jpeg"
+    ],
+    "notes": "本题库由6页JPEG扫描试卷和2页答案图人工提取，已按答案页录入选择题答案和非选择题参考答案。"
+  },
+  "figures": [
+    {
+      "id": "figure_01",
+      "title": "太阳系八大行星示意图",
+      "source_page": 1,
+      "file": "question_images/figure_01.png",
+      "linked_question_numbers": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "figure_02",
+      "title": "尼莫点位置示意图",
+      "source_page": 1,
+      "file": "question_images/figure_02.png",
+      "linked_question_numbers": [
+        3
+      ]
+    },
+    {
+      "id": "figure_03",
+      "title": "三根石柱变迁示意图",
+      "source_page": 1,
+      "file": "question_images/figure_03.png",
+      "linked_question_numbers": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "figure_04",
+      "title": "落日奇观",
+      "source_page": 1,
+      "file": "question_images/figure_04.png",
+      "linked_question_numbers": [
+        6,
+        7
+      ]
+    },
+    {
+      "id": "figure_05",
+      "title": "西亚主要产油国分布图",
+      "source_page": 2,
+      "file": "question_images/figure_05.png",
+      "linked_question_numbers": [
+        8,
+        9
+      ]
+    },
+    {
+      "id": "figure_06",
+      "title": "日本部分名温泉分布示意图",
+      "source_page": 2,
+      "file": "question_images/figure_06.png",
+      "linked_question_numbers": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": "figure_07",
+      "title": "东南亚位置和范围",
+      "source_page": 2,
+      "file": "question_images/figure_07.png",
+      "linked_question_numbers": [
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "id": "figure_08",
+      "title": "埃及鲜橙分布示意图",
+      "source_page": 2,
+      "file": "question_images/figure_08.png",
+      "linked_question_numbers": [
+        15,
+        16
+      ]
+    },
+    {
+      "id": "figure_09",
+      "title": "翁丁村民居景观",
+      "source_page": 3,
+      "file": "question_images/figure_09.png",
+      "linked_question_numbers": [
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "id": "figure_10",
+      "title": "法国旅游景点分布示意图",
+      "source_page": 3,
+      "file": "question_images/figure_10.png",
+      "linked_question_numbers": [
+        20,
+        21
+      ]
+    },
+    {
+      "id": "figure_11",
+      "title": "俄罗斯简图和巴西简图",
+      "source_page": 3,
+      "file": "question_images/figure_11.png",
+      "linked_question_numbers": [
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "id": "figure_12",
+      "title": "史帕特冰川位置及遥感影像示意图",
+      "source_page": 4,
+      "file": "question_images/figure_12.png",
+      "linked_question_numbers": [
+        25,
+        26
+      ]
+    },
+    {
+      "id": "figure_13",
+      "title": "澳大利亚牧羊带及年降水量分布示意图",
+      "source_page": 4,
+      "file": "question_images/figure_13.png",
+      "linked_question_numbers": [
+        27,
+        28
+      ]
+    },
+    {
+      "id": "figure_14",
+      "title": "印度主要农作物分布图和粮食数据对比表",
+      "source_page": 4,
+      "file": "question_images/figure_14.png",
+      "linked_question_numbers": [
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "id": "figure_15",
+      "title": "美国本土农业带（区）分布图",
+      "source_page": 5,
+      "file": "question_images/figure_15.png",
+      "linked_question_numbers": [
+        32,
+        33
+      ]
+    },
+    {
+      "id": "figure_16",
+      "title": "斯梅代雷沃钢厂地理位置示意图",
+      "source_page": 5,
+      "file": "question_images/figure_16.png",
+      "linked_question_numbers": [
+        34,
+        35
+      ]
+    },
+    {
+      "id": "figure_17",
+      "title": "湘西十八洞村附近等高线地形图和气候资料",
+      "source_page": 5,
+      "file": "question_images/figure_17.png",
+      "linked_question_numbers": [
+        36
+      ]
+    },
+    {
+      "id": "figure_18",
+      "title": "中山站位置及射电望远镜观测环境要求",
+      "source_page": 6,
+      "file": "question_images/figure_18.png",
+      "linked_question_numbers": [
+        37
+      ]
+    },
+    {
+      "id": "figure_19",
+      "title": "纯电动公交车运输线路及气候资料",
+      "source_page": 6,
+      "file": "question_images/figure_19.png",
+      "linked_question_numbers": [
+        38
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "WWG7-2026-GEO-001",
+      "number": 1,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "1992年中国载人航天工程正式立项实施，2022年中国空间站全面建成，中国载人航天用30年跨越了发达国家半个世纪的发展历程。读图1“太阳系八大行星示意图”，据此完成1-2题。",
+      "stem": "中国空间站",
+      "options": {
+        "A": "位于太阳系的中心",
+        "B": "位于金星与水星之间",
+        "C": "存在昼夜交替现象",
+        "D": "围绕太阳进行公转"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_01.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-002",
+      "number": 2,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "读图1“太阳系八大行星示意图”，据此完成1-2题。",
+      "stem": "建设中国空间站对人类太空探索和发展的主要意义是",
+      "options": {
+        "A": "推动航天技术的发展",
+        "B": "为满足人类的好奇心",
+        "C": "拓展人类生存的空间",
+        "D": "展示我国的航天实力"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_01.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-003",
+      "number": 3,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "“尼莫点”（49°S，123°W）孤立于陆域、船舶航线等之外，海水相对静止，鲜有生命，是“航天器墓园”理想地。读图2“尼莫点位置示意图”。",
+      "stem": "尼莫点位于图中",
+      "options": {
+        "A": "甲",
+        "B": "乙",
+        "C": "丙",
+        "D": "丁"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_02.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-004",
+      "number": 4,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "意大利那不勒斯位于一个巨大的、活跃的火山区域，其海岸有三根石柱，在不同的年代上升或下降。读图3“三根石柱变迁示意图”，据此完成4-5题。",
+      "stem": "意大利那不勒斯海岸三根石柱从公元79年到1955年的升降变化为",
+      "options": {
+        "A": "上升—下降—上升",
+        "B": "下降—上升—上升",
+        "C": "下降—上升—下降",
+        "D": "上升—下降—下降"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_03.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-005",
+      "number": 5,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "读图3“三根石柱变迁示意图”，据此完成4-5题。",
+      "stem": "与意大利那不勒斯海岸三根石柱在不同年代升降原理相同的是",
+      "options": {
+        "A": "喜马拉雅山脉在不断升高",
+        "B": "荷兰围海造陆",
+        "C": "马尔代夫沿海低地被淹没",
+        "D": "黄河三角洲在不断“生长”"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_03.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-006",
+      "number": 6,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "位于我国新疆维吾尔自治区巴音布鲁克草原的开都河蜿蜒曲折，在丰水期的傍晚，落日倒映在水面上，会呈现出“九个太阳”的奇观。读图4“某游客在该地拍摄到的落日奇观”，据此完成6-7题。",
+      "stem": "图中落日奇观的拍摄时间最可能是",
+      "options": {
+        "A": "1月",
+        "B": "4月",
+        "C": "7月",
+        "D": "10月"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_04.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-007",
+      "number": 7,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 1,
+      "group_prompt": "读图4“某游客在该地拍摄到的落日奇观”，据此完成6-7题。",
+      "stem": "此时，巴音布鲁克草原",
+      "options": {
+        "A": "昼长夜短",
+        "B": "昼夜等长",
+        "C": "昼短夜长",
+        "D": "出现极昼"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_04.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-008",
+      "number": 8,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "西亚石油具有储量大、油质好、自喷能力强等特点，但石油工业还比较落后，以出口未经炼加工的原油为主。读图5“西亚主要产油国分布图”，据此完成8-9题。",
+      "stem": "西亚石油的特点是：①油质一般；②外运便利；③开采困难；④储量较大。",
+      "options": {
+        "A": "①③",
+        "B": "①④",
+        "C": "②③",
+        "D": "②④"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_05.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-009",
+      "number": 9,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "读图5“西亚主要产油国分布图”，据此完成8-9题。",
+      "stem": "西亚石油产业未来应选择的发展方向是",
+      "options": {
+        "A": "加大开采与出口量",
+        "B": "降低价格拓展市场",
+        "C": "深加工提高附加值",
+        "D": "提高价格确保利润"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_05.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-010",
+      "number": 10,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "温泉一般分布在地壳不稳定、构造运动强烈的地区，是从地下自然涌出的热水，其中富含多种矿物质。日本的温泉数量众多，各具特色。读图6“日本部分名温泉分布示意图”，据此完成10-11题。",
+      "stem": "从接近客源地角度推测图中接待顾客最多的温泉是",
+      "options": {
+        "A": "草津温泉",
+        "B": "道后温泉",
+        "C": "登别温泉",
+        "D": "箱根温泉"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_06.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-011",
+      "number": 11,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "读图6“日本部分名温泉分布示意图”，据此完成10-11题。",
+      "stem": "日本温泉众多，与此联系紧密的是",
+      "options": {
+        "A": "火山众多",
+        "B": "赏樱盛行",
+        "C": "降水丰富",
+        "D": "工业发达"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_06.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-012",
+      "number": 12,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "东南亚是国际经贸往来的重要枢纽，战略地位十分重要。2025年4月14日至18日，国家主席习近平应邀对越南、马来西亚、柬埔寨三国进行国事访问，访问期间分别与越南签署合作文件、与柬埔寨制定“鱼米走廊”等合作规划、与马来西亚商定新质生产力合作高地的打造。读图7“东南亚位置和范围”，据此完成12-14题。",
+      "stem": "东南亚国家中属于内陆国的是",
+      "options": {
+        "A": "泰国",
+        "B": "柬埔寨",
+        "C": "缅甸",
+        "D": "老挝"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_07.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-013",
+      "number": 13,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "读图7“东南亚位置和范围”，据此完成12-14题。",
+      "stem": "东南亚重要的战略地位体现在",
+      "options": {
+        "A": "扼守地中海出口贸易“咽喉”",
+        "B": "印度洋和太平洋的“十字路口”",
+        "C": "联系南、北美洲的海上通道",
+        "D": "太平洋和大西洋的海上枢纽"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_07.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-014",
+      "number": 14,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "读图7“东南亚位置和范围”，据此完成12-14题。",
+      "stem": "“鱼米走廊”合作规划依托的自然条件是",
+      "options": {
+        "A": "气候高温多雨",
+        "B": "地势起伏较大",
+        "C": "种植历史悠久",
+        "D": "劳动力资源丰富"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_07.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-015",
+      "number": 15,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "随着我国不断扩大对外开放，中埃农产品贸易发展十分迅速。中国是埃及鲜橙出口的十大目的地国之一。读图8“埃及鲜橙分布示意图”，据此完成15-16题。",
+      "stem": "埃及鲜橙发展的优势自然条件是",
+      "options": {
+        "A": "气候适宜，雨热同期",
+        "B": "靠近河流，水源充足",
+        "C": "航运发达，交通便利",
+        "D": "距离消费市场近"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_08.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-016",
+      "number": 16,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 2,
+      "group_prompt": "读图8“埃及鲜橙分布示意图”，据此完成15-16题。",
+      "stem": "中埃农产品贸易的迅速发展说明",
+      "options": {
+        "A": "中国是第一大经济体",
+        "B": "中埃两国发展差距缩小",
+        "C": "埃及是唯一的受益方",
+        "D": "南南合作促进经济发展"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_08.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-017",
+      "number": 17,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "翁丁村位于云南省西南部的沧源佤族自治县，四周有连绵的大山相围，森林茂密，是中国佤族历史文化和传统建筑保留最完整的原生态村落。读图9“翁丁村民居景观图”，据此完成17-19题。",
+      "stem": "翁丁老寨",
+      "options": {
+        "A": "属于乡村聚落",
+        "B": "属于城市聚落",
+        "C": "建筑高楼林立",
+        "D": "商业活动发达"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_09.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-018",
+      "number": 18,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "读图9“翁丁村民居景观图”，据此完成17-19题。",
+      "stem": "翁丁村传统民居体现了当地",
+      "options": {
+        "A": "气候湿热，茅草屋通风散热",
+        "B": "地形平坦，茅草屋团块状分布",
+        "C": "风沙频发，茅草屋低矮无窗",
+        "D": "技术先进，茅草屋经久耐用"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_09.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-019",
+      "number": 19,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "读图9“翁丁村民居景观图”，据此完成17-19题。",
+      "stem": "落实乡村振兴战略，合理开发保护该村落的措施是",
+      "options": {
+        "A": "村落易地搬迁，保护生态环境",
+        "B": "大力仿造扩建，打造集群效益",
+        "C": "重新设计规划，统一空间布局",
+        "D": "挖掘文化价值，发展特色旅游"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_09.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-020",
+      "number": 20,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "法国是很多人都向往的旅游目的地，每年会有很多游客慕名前往。读图10“法国旅游景点分布示意图”，据此完成20-21题。",
+      "stem": "法国的旅游资源",
+      "options": {
+        "A": "均沿河流分布",
+        "B": "全部为人文景观",
+        "C": "全部为自然景观",
+        "D": "有浓郁的艺术气息"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_10.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-021",
+      "number": 21,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "读图10“法国旅游景点分布示意图”，据此完成20-21题。",
+      "stem": "法国旅游业全球领先的原因包括：①人口密度小；②消费水平低；③旅游资源丰富；④交通便利。",
+      "options": {
+        "A": "①②",
+        "B": "②③",
+        "C": "②④",
+        "D": "③④"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_10.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-022",
+      "number": 22,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "俄罗斯和巴西作为“金砖国家”的重要成员，两国因地理位置、资源禀赋和发展策略的不同，工业发展各具特色。读图11（a）“俄罗斯简图”和（b）“巴西简图”，据此完成22-24题。",
+      "stem": "俄罗斯和巴西均",
+      "options": {
+        "A": "大部分地处热带",
+        "B": "属于南美洲国家",
+        "C": "位于西半球、北半球",
+        "D": "是海陆兼备的国家"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_11.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-023",
+      "number": 23,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "读图11（a）“俄罗斯简图”和（b）“巴西简图”，据此完成22-24题。",
+      "stem": "俄罗斯与巴西工业布局的相似之处是",
+      "options": {
+        "A": "临近海港分布",
+        "B": "沿着河流分布",
+        "C": "靠近矿产资源",
+        "D": "位于高原地区"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_11.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-024",
+      "number": 24,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 3,
+      "group_prompt": "读图11（a）“俄罗斯简图”和（b）“巴西简图”，据此完成22-24题。",
+      "stem": "俄罗斯从巴西进口量较大的商品可能是",
+      "options": {
+        "A": "咖啡、可可",
+        "B": "钢铁、机械",
+        "C": "石油、机器人",
+        "D": "木材、纸浆"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_11.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-025",
+      "number": 25,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "格陵兰冰盖是全球第二大冰盖，位于格陵兰冰盖东北部的史帕特冰川是其重要组成部分。近年来，史帕特冰川面积加速变化并发生断裂。读图12“史帕特冰川位置及史帕特冰川遥感影像示意图”，据此完成25-26题。",
+      "stem": "造成格陵兰岛常年覆盖冰盖的主要因素是",
+      "options": {
+        "A": "植被分布",
+        "B": "纬度位置",
+        "C": "人类活动",
+        "D": "海陆位置"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_12.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-026",
+      "number": 26,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "读图12“史帕特冰川位置及史帕特冰川遥感影像示意图”，据此完成25-26题。",
+      "stem": "导致史帕特冰川面积变化的直接原因是",
+      "options": {
+        "A": "人类过度开采",
+        "B": "地壳运动剧烈",
+        "C": "全球气候变暖",
+        "D": "工业迅速发展"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_12.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-027",
+      "number": 27,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "美利奴细毛羊原产于澳大利亚，适应于干旱和半干旱的气候条件，忌潮湿。其羊毛品质优良，享誉世界。读图13“澳大利亚牧羊带及年降水量分布示意图”，据此完成27-28题。",
+      "stem": "图中最适宜养殖美利奴细毛羊的是",
+      "options": {
+        "A": "①地",
+        "B": "②地",
+        "C": "③地",
+        "D": "④地"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_13.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-028",
+      "number": 28,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "读图13“澳大利亚牧羊带及年降水量分布示意图”，据此完成27-28题。",
+      "stem": "澳大利亚发展美利奴细毛羊养殖的有利条件有：①气候冷湿；②降水丰富；③地形平坦；④草场广阔。",
+      "options": {
+        "A": "①②",
+        "B": "②③",
+        "C": "②④",
+        "D": "③④"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_13.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-029",
+      "number": 29,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "中国和印度作为世界上人口最多的两个国家，其粮食生产状况对全球粮食安全具有重要影响。读图14“印度主要农作物分布图”、表1中印两国耕地面积、“2024年粮食总产量数据对比表”，据此完成29-31题。",
+      "stem": "印度水稻主要分布在",
+      "options": {
+        "A": "山麓地带",
+        "B": "高原内部",
+        "C": "沿海平原",
+        "D": "丘陵坡地"
+      },
+      "answer": "C",
+      "images": [
+        "question_images/figure_14.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-030",
+      "number": 30,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "读图14和表1，据此完成29-31题。",
+      "stem": "印度耕地面积广的主要原因是",
+      "options": {
+        "A": "地形平坦广阔",
+        "B": "农业技术水平高",
+        "C": "河流湖泊众多",
+        "D": "农业历史悠久"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_14.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-031",
+      "number": 31,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 4,
+      "group_prompt": "读图14和表1，据此完成29-31题。",
+      "stem": "印度耕地面积居亚洲之首，但粮食产量却远低于我国，其主要自然原因是",
+      "options": {
+        "A": "气候炎热，虫害较多",
+        "B": "纬度较高，热量不足",
+        "C": "降水稀少，沙漠广布",
+        "D": "降水不均，旱涝频发"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_14.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-032",
+      "number": 32,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "2024年夏季，美国大部分地区遭遇持续酷热天气，高温导致持续干旱，给美国的玉米、棉花、大豆等农作物带来严重影响。读图15“美国本土农业带（区）分布图”，据此完成32-33题。",
+      "stem": "①小麦区和②小麦区播种时间差异大，主要影响因素是",
+      "options": {
+        "A": "地形",
+        "B": "水源",
+        "C": "土壤",
+        "D": "热量"
+      },
+      "answer": "D",
+      "images": [
+        "question_images/figure_15.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-033",
+      "number": 33,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "读图15“美国本土农业带（区）分布图”，据此完成32-33题。",
+      "stem": "本次旱情对美国本土乳畜区影响较小，原因是",
+      "options": {
+        "A": "五大湖提供充足水源",
+        "B": "人口稀疏，市场狭小",
+        "C": "森林密布，地下水丰富",
+        "D": "高原为主，降水丰富"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_15.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-034",
+      "number": 34,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "在“一带一路”倡议的指引下，中国企业接手了濒临破产的塞尔维亚斯梅代雷沃钢厂，并通过提供资金和技术支持、优化工厂软硬件、升级工厂福利待遇等手段，扭转了钢厂连续7年亏损的局面，成为塞尔维亚经济增长的“引擎”之一。读图16“斯梅代雷沃钢厂地理位置示意图”，据此完成34-35题。",
+      "stem": "塞尔维亚钢铁产业发展主要得益于",
+      "options": {
+        "A": "充足的资金",
+        "B": "丰富的矿产",
+        "C": "先进的技术",
+        "D": "适宜的气候"
+      },
+      "answer": "B",
+      "images": [
+        "question_images/figure_16.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-035",
+      "number": 35,
+      "type": "single_choice",
+      "score": 2,
+      "source_page": 5,
+      "group_prompt": "读图16“斯梅代雷沃钢厂地理位置示意图”，据此完成34-35题。",
+      "stem": "中企协助斯梅代雷沃钢厂扭亏为盈的措施有：①提供资金和技术支持；②提高员工薪资水平；③更新老旧生产设备；④大量进口煤炭资源。",
+      "options": {
+        "A": "①②③",
+        "B": "①②④",
+        "C": "①③④",
+        "D": "②③④"
+      },
+      "answer": "A",
+      "images": [
+        "question_images/figure_16.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-036",
+      "number": 36,
+      "type": "non_choice",
+      "score": 10,
+      "source_page": 5,
+      "group_prompt": "读图文材料，完成下列各题。材料一：十八洞村是湖南省湘西土家族苗族自治州花垣县双龙镇下辖行政村，地处云贵高原最东部。精准扶贫的十年来，十八洞村着力打造“旅游+”产业体系，大力发展茶旅融合一体化建设。如今的十八洞村已成为令人向往的“望得见山，看得见水，记得住乡愁”的和美乡村。材料二：茶树喜温暖湿润气候，喜光耐阴，不耐涝，肥沃的土壤有利于茶树生长。十八洞村依托优厚的生态环境、精湛的加工技术广泛种植茶树。材料三：图17示意湘西十八洞村附近地区等高线地形图和湘西气候资料。",
+      "stem": "（1）十八洞村所处的地形部位为____，该村所在海拔范围是____。\n（2）图中河流AB段和CD段相比，流速较快的是____，原因是____；河流CD段的下游还存在一条支流，①②两处可能存在支流的是____，判断依据是____。\n（3）某村民打算从CD段河流引水至甲山茶树园进行灌溉，有C、D两处引水点，选____处更合适，理由是____。\n（4）探究：说出当地大量种植茶树的有利自然条件。（2分）",
+      "options": {},
+      "answer": "（1）鞍部；600~750米。\n（2）CD段；CD段等高线更加密集，坡度更陡；①；①处等高线向海拔数值高处凸出，为山谷，易发育河流。（②处等高线向海拔数值低处凸出，为山脊，多为河流分水岭）\n（3）C；C处海拔较D处和甲山茶树园高，位于河流上游，从C处引水是从地势较高处向地势低处引水，水可以自流到甲山茶树园，调水成本小。（D处是从地势低处向地势高处引水，水无法自流，需靠动力引水，调水成本大）\n（4）当地属于亚热带季风气候，降水丰富，热量充足；河流众多，水源充足；地形以山地为主，利于排水。（任答两点）",
+      "images": [
+        "question_images/figure_17.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-037",
+      "number": 37,
+      "type": "non_choice",
+      "score": 10,
+      "source_page": 6,
+      "group_prompt": "读图文材料，完成下列各题。材料一：南极地区由于其独特的地理位置和环境条件，为天文观测提供了近乎完美的场所。2025年我国在南极中山站成功部署了被命名为“三峡南极眼”的射电望远镜，同时依托我国南极考察站，构建中山站—泰山站—昆仑站的天文观测链路。材料二：图18示意中山站位置及射电望远镜观测环境要求。",
+      "stem": "（1）南极地区纬度____，气温较____，气候干燥，海拔较____，空气稀薄，人类活动____，电磁干扰低，适宜建设射电望远镜。\n（2）结合南极地区自然环境特征，推测“三峡南极眼”射电望远镜装设中可能遇到的困难有____。（2分）\n（3）我国选择在中山站部署“三峡南极眼”射电望远镜的主要原因有____。（2分）我国在南极开展天文观测对全球科学研究的积极影响有____。（2分）",
+      "options": {},
+      "answer": "（1）高；低；高；少。\n（2）强风、暴雪等恶劣天气，影响设备安装；海上冰山威胁海上航行，运输不便等。\n（3）主要原因：地理位置优越，便于与其他科考站协同观测；基础设施完善，利于设备维护和科研支持数据。积极影响：促进科学进步；推动天文学研究，揭示宇宙奥秘；加强国际合作，推动极地科研发展。（任答两点）",
+      "images": [
+        "question_images/figure_18.png"
+      ]
+    },
+    {
+      "id": "WWG7-2026-GEO-038",
+      "number": 38,
+      "type": "non_choice",
+      "score": 10,
+      "source_page": 6,
+      "group_prompt": "读图文材料，完成下列各题。材料一：2025年4月1日，我国福建某公司与埃塞俄比亚在其首都亚的斯亚贝巴共同举行了100辆纯电动公交车交付仪式，车辆以散件形式在埃塞俄比亚本地进行组装，其中部分散件来自我国。该项目是东非地区首个大批量纯电动公交车运营项目，标志着中埃两国在绿色交通领域的合作开启新篇章。材料二：图19示意纯电动公交车部分散件从我国运往埃塞俄比亚的运输线路。",
+      "stem": "（1）纯电动公交车散件从我国运往埃塞俄比亚，选择的交通运输方式是____，该方式的优点是____。我国与埃塞俄比亚的互助合作属于____。\n（2）埃塞俄比亚拥有丰富的清洁能源，如____和____等，能为新能源汽车的充电需求提供充足的电力。任选其中一种，说明该种资源丰富的原因是____。\n（3）我国与埃塞俄比亚在纯电动公交车项目上合作，对埃塞俄比亚的意义有____。推测我国在助力埃塞俄比亚推进绿色交通发展进程中可能采取的措施。（3分）",
+      "options": {},
+      "answer": "（1）海洋（水路）运输；运输量大、运费低；南南合作。\n（2）太阳能、地热能、风能（任选两种）。太阳能：纬度低，且位于埃塞俄比亚高原，海拔高，太阳辐射强烈。或地热能：位于板块交界处，地壳运动活跃，地热能资源丰富。或风能：位于埃塞俄比亚高原，地势高，地表开阔；靠近沿海地区，风力资源丰富。\n（3）意义：推动绿色交通发展，改善环境质量；改善居民出行体验；降低能源依赖与运营成本；提升当地公共交通运营水平等（任答一点）。措施：完善新能源汽车配套基础设施；开展技术培训，培养技术人才和产业工人；优化当地交通设计，减少对生态环境的破坏等。",
+      "images": [
+        "question_images/figure_19.png"
+      ]
+    }
+  ]
+}

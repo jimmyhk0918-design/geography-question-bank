@@ -34,5 +34,11 @@
     "title": "海口市2026年初中学业水平模拟考试（一）",
     "url": "./geography_bank/haikou_2026_mock1/haikou_2026_mock1_question_bank.json",
     "basePath": "./geography_bank/haikou_2026_mock1"
+  },
+  {
+    "id": "wanwei_grade7_stage_2026",
+    "title": "万维地理七年级阶段检测卷2026",
+    "url": "./geography_bank/wanwei_grade7_stage_2026/wanwei_grade7_stage_2026_question_bank.json",
+    "basePath": "./geography_bank/wanwei_grade7_stage_2026"
   }
 ]
