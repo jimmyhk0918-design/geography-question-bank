@@ -52,5 +52,11 @@
     "title": "万维地理综合检测卷2026",
     "url": "./geography_bank/wanwei_comprehensive_2026/wanwei_comprehensive_2026_question_bank.json",
     "basePath": "./geography_bank/wanwei_comprehensive_2026"
+  },
+  {
+    "id": "yiben_geography_prediction_2026",
+    "title": "一本地理生地会考预测卷",
+    "url": "./geography_bank/yiben_geography_prediction_2026/yiben_geography_prediction_2026_question_bank.json",
+    "basePath": "./geography_bank/yiben_geography_prediction_2026"
   }
 ]
