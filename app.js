@@ -1,4 +1,4 @@
-const APP_VERSION = "2026-06-07-cloud-v1";
+const APP_VERSION = "2026-06-07-guest-migration-v1";
 const BANK_INDEX_URL = "./geography_bank/question_banks.json";
 const SELECTED_BANK_KEY = "geo-question-bank-selected-bank-v1";
 const FALLBACK_BANK = {
@@ -20,6 +20,8 @@ const state = {
   cloud: null,
   user: null,
   cloudConfigured: false,
+  localMigrationPromise: null,
+  localMigrationUserId: "",
 };
 
 const els = {
@@ -66,26 +68,27 @@ function legacyProgressKey(bankId) {
   return `geo-question-bank-progress-v1:${bankId || "default"}`;
 }
 
-function progressKey(bankId) {
-  const owner = state.user?.id || "guest";
+function progressKeyForOwner(owner, bankId) {
   return `geo-question-bank-progress-v2:${owner}:${bankId || "default"}`;
 }
 
-function loadProgress(bankId) {
+function progressKey(bankId) {
+  return progressKeyForOwner(state.user?.id || "guest", bankId);
+}
+
+function readStoredProgress(key) {
   try {
-    const currentProgress = localStorage.getItem(progressKey(bankId));
-    if (currentProgress) {
-      return JSON.parse(currentProgress) || {};
-    }
-
-    if (!state.user) {
-      return JSON.parse(localStorage.getItem(legacyProgressKey(bankId))) || {};
-    }
-
-    return {};
-  } catch {
+    return JSON.parse(localStorage.getItem(key) || "{}") || {};
+  } catch (error) {
+    console.warn("本地进度解析失败", key, error);
     return {};
   }
+}
+
+function loadProgress(bankId) {
+  const currentProgress = readStoredProgress(progressKey(bankId));
+  if (Object.keys(currentProgress).length) return currentProgress;
+  return state.user ? {} : readStoredProgress(legacyProgressKey(bankId));
 }
 
 function saveProgress({ cloud = true } = {}) {
@@ -146,14 +149,71 @@ function updateCloudStatus({ message }) {
   renderAccount();
 }
 
-async function restoreCloudProgress() {
-  if (!state.currentBank || !state.cloud?.isSignedIn()) return;
-  const bankId = state.currentBank.id;
-  const merged = await state.cloud.loadProgress(bankId, state.progress);
-  if (state.currentBank?.id !== bankId) return;
-  state.progress = merged;
-  saveProgress({ cloud: false });
-  render();
+function collectGuestProgress(bankId, userId) {
+  const merge = window.GeoCloud.mergeProgress;
+  const accountProgress = readStoredProgress(progressKeyForOwner(userId, bankId));
+  const guestProgress = readStoredProgress(progressKeyForOwner("guest", bankId));
+  const legacyProgress = readStoredProgress(legacyProgressKey(bankId));
+  return merge(merge(accountProgress, legacyProgress), guestProgress);
+}
+
+async function migrateGuestProgress() {
+  const userId = state.user?.id;
+  if (!userId || !state.cloud?.isSignedIn() || !state.banks.length) return;
+  if (state.localMigrationUserId === userId) return;
+  if (state.localMigrationPromise) return state.localMigrationPromise;
+
+  state.localMigrationPromise = (async () => {
+    state.cloud.notify("syncing", "正在把游客答题记录同步到账号");
+    let currentBankProgress = null;
+
+    for (const bank of state.banks) {
+      let localProgress = collectGuestProgress(bank.id, userId);
+
+      if (state.currentBank?.id === bank.id) {
+        localProgress = window.GeoCloud.mergeProgress(localProgress, state.progress);
+      }
+
+      if (!Object.keys(localProgress).length && state.currentBank?.id !== bank.id) {
+        continue;
+      }
+
+      const merged = await state.cloud.loadProgress(bank.id, localProgress);
+      localStorage.setItem(
+        progressKeyForOwner(userId, bank.id),
+        JSON.stringify(merged),
+      );
+      if (Object.keys(localProgress).length) {
+        state.cloud.queueSave(bank.id, merged);
+      }
+
+      if (state.currentBank?.id === bank.id) {
+        currentBankProgress = merged;
+      }
+    }
+
+    if (currentBankProgress) {
+      state.progress = currentBankProgress;
+      render();
+    }
+
+    if (navigator.onLine) {
+      await state.cloud.flushAll();
+    }
+
+    state.localMigrationUserId = userId;
+    const hasPendingProgress = state.cloud.pending.size > 0;
+    state.cloud.notify(
+      hasPendingProgress ? "pending" : "synced",
+      hasPendingProgress ? "部分游客记录等待同步" : "游客记录已同步到账号",
+    );
+  })();
+
+  try {
+    await state.localMigrationPromise;
+  } finally {
+    state.localMigrationPromise = null;
+  }
 }
 
 function setAuthMessage(message, type = "") {
@@ -191,7 +251,9 @@ async function submitAuth(mode) {
       await state.cloud.signIn(email, password);
     }
 
-    await restoreCloudProgress();
+    state.user = state.cloud.user;
+    renderAccount();
+    await migrateGuestProgress();
     els.authDialog.close();
     els.authForm.reset();
   } catch (error) {
@@ -577,6 +639,7 @@ function bindEvents() {
   els.signOutButton.addEventListener("click", async () => {
     try {
       await state.cloud?.signOut();
+      state.localMigrationUserId = "";
       state.user = null;
       if (state.currentBank) {
         state.progress = loadProgress(state.currentBank.id);
@@ -625,9 +688,10 @@ async function init() {
       onStatus: updateCloudStatus,
       onUserChange: async (user) => {
         state.user = user;
+        if (!user) state.localMigrationUserId = "";
         renderAccount();
         if (user && state.currentBank) {
-          await restoreCloudProgress();
+          await migrateGuestProgress();
         } else if (state.currentBank) {
           state.progress = loadProgress(state.currentBank.id);
           render();
@@ -641,6 +705,9 @@ async function init() {
     state.banks = bankResponse.ok ? await bankResponse.json() : [FALLBACK_BANK];
     const savedBankId = localStorage.getItem(SELECTED_BANK_KEY);
     await loadBank(savedBankId || state.banks[0]?.id || FALLBACK_BANK.id);
+    if (state.cloud?.isSignedIn()) {
+      await migrateGuestProgress();
+    }
   } catch (error) {
     els.bankTitle.textContent = "题库加载失败";
     els.questionHeading.textContent = "无法读取题库";
