@@ -1,3 +1,4 @@
+const APP_VERSION = "2026-06-07-cloud-v1";
 const BANK_INDEX_URL = "./geography_bank/question_banks.json";
 const SELECTED_BANK_KEY = "geo-question-bank-selected-bank-v1";
 const FALLBACK_BANK = {
@@ -16,11 +17,18 @@ const state = {
   filter: "all",
   search: "",
   progress: {},
+  cloud: null,
+  user: null,
+  cloudConfigured: false,
 };
 
 const els = {
   bankTitle: document.querySelector("#bankTitle"),
   bankSelect: document.querySelector("#bankSelect"),
+  accountName: document.querySelector("#accountName"),
+  syncStatus: document.querySelector("#syncStatus"),
+  openAuthButton: document.querySelector("#openAuthButton"),
+  signOutButton: document.querySelector("#signOutButton"),
   attemptedCount: document.querySelector("#attemptedCount"),
   accuracyRate: document.querySelector("#accuracyRate"),
   wrongCount: document.querySelector("#wrongCount"),
@@ -44,22 +52,47 @@ const els = {
   imageDialog: document.querySelector("#imageDialog"),
   dialogImage: document.querySelector("#dialogImage"),
   closeImageDialog: document.querySelector("#closeImageDialog"),
+  authDialog: document.querySelector("#authDialog"),
+  authForm: document.querySelector("#authForm"),
+  authEmail: document.querySelector("#authEmail"),
+  authPassword: document.querySelector("#authPassword"),
+  authMessage: document.querySelector("#authMessage"),
+  signInButton: document.querySelector("#signInButton"),
+  signUpButton: document.querySelector("#signUpButton"),
+  closeAuthDialog: document.querySelector("#closeAuthDialog"),
 };
 
-function progressKey(bankId) {
+function legacyProgressKey(bankId) {
   return `geo-question-bank-progress-v1:${bankId || "default"}`;
+}
+
+function progressKey(bankId) {
+  const owner = state.user?.id || "guest";
+  return `geo-question-bank-progress-v2:${owner}:${bankId || "default"}`;
 }
 
 function loadProgress(bankId) {
   try {
-    return JSON.parse(localStorage.getItem(progressKey(bankId))) || {};
+    const currentProgress = localStorage.getItem(progressKey(bankId));
+    if (currentProgress) {
+      return JSON.parse(currentProgress) || {};
+    }
+
+    if (!state.user) {
+      return JSON.parse(localStorage.getItem(legacyProgressKey(bankId))) || {};
+    }
+
+    return {};
   } catch {
     return {};
   }
 }
 
-function saveProgress() {
+function saveProgress({ cloud = true } = {}) {
   localStorage.setItem(progressKey(state.currentBank?.id), JSON.stringify(state.progress));
+  if (cloud) {
+    state.cloud?.queueSave(state.currentBank?.id, state.progress);
+  }
 }
 
 function getRecord(questionId) {
@@ -71,13 +104,101 @@ function getRecord(questionId) {
       isCorrect: null,
       attempts: 0,
       updatedAt: "",
+      deleted: false,
     };
   }
   return state.progress[questionId];
 }
 
+function touchRecord(record) {
+  record.updatedAt = new Date().toISOString();
+  record.deleted = false;
+}
+
 function normalizeText(value) {
   return String(value || "").toLowerCase().trim();
+}
+
+function versionedUrl(url) {
+  const separator = url.includes("?") ? "&" : "?";
+  return `${url}${separator}v=${encodeURIComponent(APP_VERSION)}`;
+}
+
+function renderAccount() {
+  state.cloudConfigured = Boolean(state.cloud?.isConfigured());
+  state.user = state.cloud?.user || null;
+
+  if (state.user) {
+    els.accountName.textContent = state.user.email || "已登录学生";
+    els.openAuthButton.classList.add("hidden");
+    els.signOutButton.classList.remove("hidden");
+    return;
+  }
+
+  els.accountName.textContent = state.cloudConfigured ? "未登录" : "云同步待配置";
+  els.openAuthButton.textContent = state.cloudConfigured ? "登录同步" : "配置云同步";
+  els.openAuthButton.classList.remove("hidden");
+  els.signOutButton.classList.add("hidden");
+}
+
+function updateCloudStatus({ message }) {
+  els.syncStatus.textContent = message;
+  renderAccount();
+}
+
+async function restoreCloudProgress() {
+  if (!state.currentBank || !state.cloud?.isSignedIn()) return;
+  const bankId = state.currentBank.id;
+  const merged = await state.cloud.loadProgress(bankId, state.progress);
+  if (state.currentBank?.id !== bankId) return;
+  state.progress = merged;
+  saveProgress({ cloud: false });
+  render();
+}
+
+function setAuthMessage(message, type = "") {
+  els.authMessage.textContent = message;
+  els.authMessage.className = `auth-message${type ? ` ${type}` : ""}`;
+}
+
+function setAuthBusy(isBusy) {
+  els.signInButton.disabled = isBusy;
+  els.signUpButton.disabled = isBusy;
+  els.authEmail.disabled = isBusy;
+  els.authPassword.disabled = isBusy;
+}
+
+async function submitAuth(mode) {
+  if (!state.cloud?.isConfigured()) {
+    setAuthMessage("请先按 README 中的步骤填写 supabase-config.js。", "error");
+    return;
+  }
+
+  if (!els.authForm.reportValidity()) return;
+  const email = els.authEmail.value.trim();
+  const password = els.authPassword.value;
+  setAuthBusy(true);
+  setAuthMessage(mode === "signup" ? "正在创建账号..." : "正在登录...");
+
+  try {
+    if (mode === "signup") {
+      const data = await state.cloud.signUp(email, password);
+      if (!data.session) {
+        setAuthMessage("账号已创建，请先到邮箱完成验证后再登录。", "success");
+        return;
+      }
+    } else {
+      await state.cloud.signIn(email, password);
+    }
+
+    await restoreCloudProgress();
+    els.authDialog.close();
+    els.authForm.reset();
+  } catch (error) {
+    setAuthMessage(error.message || "登录失败，请检查邮箱和密码。", "error");
+  } finally {
+    setAuthBusy(false);
+  }
 }
 
 function hasAnswer(question) {
@@ -210,6 +331,7 @@ function renderAnswer(question) {
       input.addEventListener("change", () => {
         record.selected = key;
         record.isCorrect = null;
+        touchRecord(record);
         saveProgress();
         render();
       });
@@ -229,6 +351,7 @@ function renderAnswer(question) {
     textarea.addEventListener("input", () => {
       record.textAnswer = textarea.value;
       record.isCorrect = null;
+      touchRecord(record);
       saveProgress();
     });
     els.answerForm.append(textarea);
@@ -355,7 +478,7 @@ function submitCurrent() {
 
   record.submitted = true;
   record.attempts += 1;
-  record.updatedAt = new Date().toISOString();
+  touchRecord(record);
 
   if (hasAnswer(question) && isChoice(question)) {
     record.isCorrect = record.selected === String(question.answer).trim();
@@ -372,14 +495,22 @@ function markCurrent(isCorrect) {
   const record = getRecord(question.id);
   record.submitted = true;
   record.isCorrect = isCorrect;
-  record.updatedAt = new Date().toISOString();
+  touchRecord(record);
   saveProgress();
   render();
 }
 
 function clearCurrent() {
   const question = currentQuestion();
-  delete state.progress[question.id];
+  state.progress[question.id] = {
+    selected: "",
+    textAnswer: "",
+    submitted: false,
+    isCorrect: null,
+    attempts: 0,
+    updatedAt: new Date().toISOString(),
+    deleted: true,
+  };
   saveProgress();
   render();
 }
@@ -428,6 +559,34 @@ function bindEvents() {
   els.nextButton.addEventListener("click", () => move(1));
   els.randomButton.addEventListener("click", randomQuestion);
   els.closeImageDialog.addEventListener("click", () => els.imageDialog.close());
+
+  els.openAuthButton.addEventListener("click", () => {
+    if (!state.cloud?.isConfigured()) {
+      setAuthMessage("云同步还没有连接数据库，请先完成 README 中的 Supabase 配置。", "error");
+    } else {
+      setAuthMessage("同一账号在任意电脑登录后，都会恢复之前的答题记录。");
+    }
+    els.authDialog.showModal();
+  });
+  els.closeAuthDialog.addEventListener("click", () => els.authDialog.close());
+  els.authForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    submitAuth("signin");
+  });
+  els.signUpButton.addEventListener("click", () => submitAuth("signup"));
+  els.signOutButton.addEventListener("click", async () => {
+    try {
+      await state.cloud?.signOut();
+      state.user = null;
+      if (state.currentBank) {
+        state.progress = loadProgress(state.currentBank.id);
+        render();
+      }
+      renderAccount();
+    } catch (error) {
+      els.syncStatus.textContent = `退出失败：${error.message}`;
+    }
+  });
 }
 
 async function loadBank(bankId) {
@@ -445,11 +604,15 @@ async function loadBank(bankId) {
   els.questionStem.textContent = "";
   els.submitButton.disabled = true;
 
-  const response = await fetch(nextBank.url);
+  const response = await fetch(versionedUrl(nextBank.url), { cache: "no-store" });
   if (!response.ok) throw new Error(`题库加载失败：${response.status}`);
   const data = await response.json();
   state.source = data.source;
   state.questions = data.questions || [];
+  if (state.cloud?.isSignedIn()) {
+    state.progress = await state.cloud.loadProgress(nextBank.id, state.progress);
+    saveProgress({ cloud: false });
+  }
   els.bankTitle.textContent = data.source?.title || nextBank.title || "地理题库";
   els.submitButton.disabled = false;
   render();
@@ -458,7 +621,23 @@ async function loadBank(bankId) {
 async function init() {
   bindEvents();
   try {
-    const bankResponse = await fetch(BANK_INDEX_URL);
+    state.cloud = new window.GeoCloud.CloudProgressService({
+      onStatus: updateCloudStatus,
+      onUserChange: async (user) => {
+        state.user = user;
+        renderAccount();
+        if (user && state.currentBank) {
+          await restoreCloudProgress();
+        } else if (state.currentBank) {
+          state.progress = loadProgress(state.currentBank.id);
+          render();
+        }
+      },
+    });
+    await state.cloud.init();
+    renderAccount();
+
+    const bankResponse = await fetch(versionedUrl(BANK_INDEX_URL), { cache: "no-store" });
     state.banks = bankResponse.ok ? await bankResponse.json() : [FALLBACK_BANK];
     const savedBankId = localStorage.getItem(SELECTED_BANK_KEY);
     await loadBank(savedBankId || state.banks[0]?.id || FALLBACK_BANK.id);

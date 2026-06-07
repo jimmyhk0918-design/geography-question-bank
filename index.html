@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>初中会考地理刷题系统</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=2026-06-07-cloud-v1" />
   </head>
   <body>
     <div class="app-shell">
@@ -21,6 +21,17 @@
           <span>题库</span>
           <select id="bankSelect"></select>
         </label>
+
+        <section class="student-account" aria-label="学生账号">
+          <div class="account-copy">
+            <strong id="accountName">未登录</strong>
+            <span id="syncStatus">当前进度仅保存在本机</span>
+          </div>
+          <div class="account-actions">
+            <button id="openAuthButton" class="text-button primary" type="button">登录同步</button>
+            <button id="signOutButton" class="text-button hidden" type="button">退出</button>
+          </div>
+        </section>
 
         <div class="stats-grid" aria-label="练习统计">
           <div class="stat">
@@ -92,6 +103,34 @@
       <img id="dialogImage" alt="" />
     </dialog>
 
-    <script src="./app.js"></script>
+    <dialog id="authDialog" class="auth-dialog">
+      <form id="authForm" class="auth-form">
+        <div class="auth-heading">
+          <div>
+            <p class="eyebrow">学生账号</p>
+            <h2>登录后跨设备保存进度</h2>
+          </div>
+          <button id="closeAuthDialog" class="dialog-close" type="button" aria-label="关闭">×</button>
+        </div>
+        <label>
+          <span>邮箱</span>
+          <input id="authEmail" type="email" autocomplete="email" required placeholder="student@example.com" />
+        </label>
+        <label>
+          <span>密码</span>
+          <input id="authPassword" type="password" autocomplete="current-password" minlength="6" required placeholder="至少 6 位" />
+        </label>
+        <p id="authMessage" class="auth-message">同一账号在任意电脑登录后，都会恢复之前的答题记录。</p>
+        <div class="auth-buttons">
+          <button id="signInButton" class="text-button primary" type="submit">登录</button>
+          <button id="signUpButton" class="text-button" type="button">注册新账号</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="./supabase-config.js?v=2026-06-07-cloud-v1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./cloud-sync.js?v=2026-06-07-cloud-v1"></script>
+    <script src="./app.js?v=2026-06-07-cloud-v1"></script>
   </body>
 </html>
