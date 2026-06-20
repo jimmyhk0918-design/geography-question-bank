@@ -58,5 +58,11 @@
     "title": "一本地理生地会考预测卷",
     "url": "./geography_bank/yiben_geography_prediction_2026/yiben_geography_prediction_2026_question_bank.json",
     "basePath": "./geography_bank/yiben_geography_prediction_2026"
+  },
+  {
+    "id": "hainan_2025_exam",
+    "title": "2025年海南省中考地理试题",
+    "url": "./geography_bank/hainan_2025_exam/hainan_2025_exam_question_bank.json",
+    "basePath": "./geography_bank/hainan_2025_exam"
   }
 ]

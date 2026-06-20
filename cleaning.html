@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>地理题库数据清洗核对</title>
+    <link rel="stylesheet" href="./cleaning.css?v=2026-06-11-review-v4" />
+  </head>
+  <body>
+    <div class="review-shell">
+      <aside class="review-sidebar">
+        <div class="review-brand">
+          <span class="review-brand-mark">核</span>
+          <div>
+            <h1>数据清洗核对</h1>
+            <p>读图题原卷比对</p>
+          </div>
+        </div>
+
+        <a class="back-link" href="./index.html">返回刷题系统</a>
+
+        <label class="field">
+          <span>题库</span>
+          <select id="bankSelect"></select>
+        </label>
+
+        <label class="field">
+          <span>查找题目</span>
+          <input id="searchInput" type="search" placeholder="题号、题干、材料" />
+        </label>
+
+        <div class="status-filters" aria-label="核对状态筛选">
+          <button class="status-filter active" data-filter="all" type="button">全部</button>
+          <button class="status-filter" data-filter="pending" type="button">待核对</button>
+          <button class="status-filter" data-filter="approved" type="button">已通过</button>
+          <button class="status-filter" data-filter="rework" type="button">需返工</button>
+        </div>
+
+        <div class="review-stats">
+          <span>当前题库</span>
+          <strong id="progressText">0 / 0</strong>
+        </div>
+
+        <div id="questionList" class="review-question-list" aria-label="读图题列表"></div>
+      </aside>
+
+      <main class="review-workspace">
+        <header class="review-toolbar">
+          <div>
+            <p id="questionMeta">加载核对数据</p>
+            <h2 id="questionTitle">请稍候</h2>
+          </div>
+          <div class="review-nav">
+            <button id="prevButton" class="command-button" type="button">上一题</button>
+            <button id="nextButton" class="command-button primary" type="button">下一题</button>
+          </div>
+        </header>
+
+        <section id="emptyState" class="empty-state hidden">
+          <h2>没有符合条件的读图题</h2>
+          <p>请调整题库、状态或搜索条件。</p>
+        </section>
+
+        <article id="reviewContent" class="review-content">
+          <section class="question-copy">
+            <div id="groupPrompt" class="group-prompt"></div>
+            <h3 id="questionStem"></h3>
+            <div id="questionOptions" class="question-options"></div>
+            <p class="answer-line">参考答案：<strong id="questionAnswer"></strong></p>
+          </section>
+
+          <section class="comparison-section">
+            <div class="section-heading">
+              <div>
+                <span class="step-label">清洗结果</span>
+                <h3>题库关联图片</h3>
+              </div>
+              <p>核对图形是否完整、清晰，且与题干对应。</p>
+            </div>
+            <div id="cleanedImages" class="cleaned-images"></div>
+          </section>
+
+          <section class="comparison-section source-section">
+            <div class="section-heading">
+              <div>
+                <span class="step-label">原卷依据</span>
+                <h3>整题区域核对截图</h3>
+              </div>
+              <p>截图直接取自高清原卷页，点击可查看整页。</p>
+            </div>
+            <div id="sourceReviews" class="source-reviews"></div>
+          </section>
+
+          <section class="decision-section">
+            <div class="decision-buttons" aria-label="核对结论">
+              <button class="decision-button approved" data-status="approved" type="button">标记通过</button>
+              <button class="decision-button rework" data-status="rework" type="button">需要返工</button>
+              <button class="decision-button" data-status="pending" type="button">恢复待核对</button>
+            </div>
+            <label class="notes-field">
+              <span>核对备注</span>
+              <textarea id="reviewNotes" rows="3" placeholder="例如：原图右侧图例缺失、题组范围应包含第2题……"></textarea>
+            </label>
+          </section>
+        </article>
+      </main>
+    </div>
+
+    <dialog id="pageDialog" class="page-dialog">
+      <button id="closeDialog" class="dialog-close" type="button" aria-label="关闭">×</button>
+      <div class="dialog-copy">
+        <strong id="dialogTitle">原卷整页</strong>
+        <span>可放大检查上下文与截图范围</span>
+      </div>
+      <img id="pageDialogImage" alt="原卷整页" />
+    </dialog>
+
+    <script src="./geography_bank/review_manifest.js?v=2026-06-10-review-v3"></script>
+    <script src="./cleaning.js?v=2026-06-11-review-v9"></script>
+  </body>
+</html>
